@@ -1,0 +1,15 @@
+<svg width="40px" height="31px" viewBox="0 0 40 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="HealthIndexSettings">
+        <g transform="translate(-320.000000, -5342.000000)" id="BOTTOM">
+            <g transform="translate(0.000000, 2478.000000)">
+                <g id="comparison" transform="translate(165.000000, 2595.000000)">
+                    <g id="HI" transform="translate(0.000000, 153.964069)">
+                        <g id="compare01" transform="translate(40.000000, 84.980168)">
+                            <path d="M127.5,45.2751296 L127.5,55.2727964 L122.5,55.2727964 L122.5,45.2751296 L127.5,45.2751296 Z M135,35.2774628 L135,55.2727964 L130,55.2727964 L130,35.2774628 L135,35.2774628 Z M155,57.7722131 L155,60.2716298 L115,60.2716298 L115,30.2786294 L117.5,30.2786294 L117.5,57.7722131 L155,57.7722131 Z M142.5,40.2762962 L142.5,55.2727964 L137.5,55.2727964 L137.5,40.2762962 L142.5,40.2762962 Z M150,32.7780461 L150,55.2727964 L145,55.2727964 L145,32.7780461 L150,32.7780461 Z" id="bar-chart---FontAwesome"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
