@@ -1,0 +1,259 @@
+
+
+
+
+.container {
+    width: 100%;
+    padding:0;
+    margin: 10px auto;
+    box-shadow: 0 5px 5px -4px rgba(0, 0, 0, 0.23);
+    text-align: center;
+    
+}
+
+.navbar-wrap {
+    display: flex;
+    align-content: center;
+    padding: 0;
+    width: 100%;
+    height: 86px;
+    font-size: 16px;
+    
+
+    .row {
+        width: 100%;
+        margin: 0;
+    }
+
+    .subnav
+    .subnav-contacts,
+    .subnav-nav {
+        display: flex;
+        align-content: space-between;
+        flex-grow: 1;
+        padding: 0;
+    }
+
+    .subnav {
+        display: flex;
+        align-content: space-between;
+        padding: 0;
+    }
+
+    .subnav-contacts {
+        height: 20px;
+    }
+
+    a {
+        font-weight: 700;
+        color: #000;
+
+        &:hover {
+            color: gray;
+        }
+    }
+
+    .navbar {
+        padding: 0;
+        flex-grow: 1;
+    }
+}
+
+.nav-logo {
+    display: inline-block;
+    padding: 0;
+}
+
+.site-logo__icon {
+    position: relative;
+    top:15px;
+}
+
+.nav-items { 
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    justify-content: space-between;
+    align-content: center;
+    position: relative;
+    top: 12px;
+    padding: 0;
+    list-style: none;
+
+    a.nav-link {
+        padding:0;
+    }
+
+    .nav-items__button {
+        width: 140px;
+        height:30px;
+        border: none;
+        border-radius: 3px;
+        background: #009639;
+        color:#fff;
+    }
+    
+    .nav-item__search {
+        align-self: center;
+        box-sizing: content-box;
+        border: 2px solid #ff6900;
+        border-radius: 50%;
+        padding: 3.5px;
+    }
+}
+
+
+.nav-contacts {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+
+    .contact-item {
+        border-right: 1px solid #d8d8d8;
+        padding-right: 26px;
+        svg {
+            margin-right: 10px;
+        }
+        .nav-contacts__question {
+            position: relative;
+            top:5px;
+            box-sizing: content-box;
+            margin-right: 0;
+            margin-left:10px;
+            padding: 4px;
+            border-radius: 50%;
+            background-color: #d8d8d8;
+        }
+    &:nth-of-type(3){
+        border: none;
+        padding: 0;
+    }
+    }
+
+    .nav-contacts__username a {
+        font-weight: 300;
+        color:#ff6900;
+    }
+    .nav-contacts__avatar {
+        display: none;
+    }
+
+    .nav-contacts__wishlist {
+        border: none;
+        padding-right: 0;
+        height: 20px;
+        width: 20px;
+
+        
+    }
+
+    .nav-contacts__search {
+        display: none;
+    }
+
+    .nav-contacts__menu {
+        display: none;
+        border: none;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    
+}
+
+@media only screen and (max-width:1200px) {
+
+    .navbar-wrap {
+        padding: 0;
+        width: 100%;
+        height: 68px;
+        font-size: 16px;
+
+
+        .nav-contacts {
+            position: relative;
+            top:50%;
+            margin-top: -20px;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            font-weight: 300;
+            font-family: 'Lato', sans-serif;
+
+            
+            .contact-item {
+                padding-right: 20px;
+                border:none;
+            }
+            .nav-contacts__phone, 
+            .nav-contacts__question {
+                display: none;
+            }
+
+            .nav-contacts__icon {
+                display: none;
+            }
+
+            .nav-contacts__avatar {
+                display: inline-block ;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+            }
+            
+            .nav-contacts__wishlist{
+                height: 26px;
+                width: 26px;
+            }
+
+            .nav-contacts__search {
+                position: relative;
+                top:50%;
+                margin-top: -8.5px;
+                box-sizing: content-box;
+                display: inline-block ;
+                width: 16.5px;
+                height: 16.5px; 
+                border: 2px solid #ff6900;
+                border-radius: 50%;
+                padding: 3.5px;
+               
+            }        
+        }
+        .wishlist-status {
+            display: none;
+        }
+
+
+        .nav-contacts__menu {
+            display: table;
+            font-weight: 400;
+            letter-spacing: 0;
+            .navbar-toggler {
+                display: inline-block;
+                position: relative;
+                top: 50%;
+                height: 30px; 
+                padding: 0;     
+            
+                div {
+                    width: 31px;
+                    height: 4px;
+                    margin: 4px 10px;
+                    border-radius: 2px;
+                    background: black;
+                }
+            }
+            p {
+                display: inline-block;  
+                margin-top: -5px; 
+                vertical-align: middle;
+            }
+        }
+        
+    }
+}

@@ -2,6 +2,7 @@
 @import 'bootstrap/bootstrap';
 @import 'base/*';
 
+
 body {
     font-family: 'Roboto', $font-family-base;
 
@@ -11,85 +12,3 @@ body {
 }
 
 @import 'components/*';
-
-
-
-.container {
-    width: 100%;
-    padding:0;
-    margin: 10px auto;
-    text-align: left;
-}
-
-nav {
-    width: 100%;
-    height: 86px;
-    font-size: 16px;
-
-    .navbar {
-        padding: 0;
-    }
-
-    .row {
-        width: 100%;
-        margin: 0;
-    }
-
-    .subnav {
-        padding: 0;
-    }
-
-    a {
-        font-weight: 700;
-        color: #000;
-    }
-
-}
-
-.logo {
-    display: inline-block;
-    padding: 0;
-}
-
-.site-logo__icon {
-    position: relative;
-    top:15px;
-}
-
-.nav-items { 
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    top: 12px;
-    padding: 0;
-    list-style-type: none;
-
-
-    .nav-items__link{
-        font-weight: 700;
-    }
-
-    .nav-items__button {
-
-    }
-}
-
-
-.nav-contacts {
-    display: flex;
-    font-weight: 300;
-    font-family: 'Lato', sans-serif;
-
-    span {
-        border-right: 1px solid #d8d8d8;
-        padding: 0 20px;
-        svg {
-            margin-right: 10px;
-        }
-    }
-
-    .nav-contacts__username a {
-        font-weight: 300;
-        color:#ff6900;
-    }
-}
