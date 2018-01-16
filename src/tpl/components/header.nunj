@@ -1,6 +1,6 @@
 <header class="navbar-wrap">
     <div class="row">
-        <div class="col-lg-3 nav-logo">
+        <div class="col-lg-3 col-md-4 nav-logo">
             <svg class="site-logo__icon" width="41" height="42" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
                     <path d="M12.38 28.314V32.7c0 4.403 3.575 7.973 7.987 7.973 4.41 0 7.987-3.57 7.987-7.974v-4.386h4.392c4.41 0 7.987-3.57 7.987-7.974s-3.576-7.974-7.987-7.974H12.38v15.948" fill="#FED330"/>
@@ -14,10 +14,10 @@
                 </g>
             </svg>
         </div>
-        <div class="col-lg-9 subnav">
+        <div class="col-lg-9 col-md-8 subnav">
             <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-9 nav-contacts subnav-contacts">
+                <div class="col-lg-3 subnav-space"></div>
+                <div class="col-lg-9 col-md-12 nav-contacts subnav-contacts">
                     <span class="contact-item nav-contacts__phone">Helpline: <a href="#">800 141 141</a></span>
                     <span class="contact-item nav-contacts__username">
                         <img class="nav-contacts__avatar" src="http://satyr.io/200x300/orange?delay=3g" alt="avatar-image">
