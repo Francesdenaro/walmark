@@ -9,46 +9,75 @@
 }
 
 .container {
+    max-width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.header__wrapper {
-    height: $wrapper-small;
+.header__wrapper {  
+    @include flex (space-between, center,0);
+
+    .header__wrapper--logo { 
+        padding: 0;
+        max-width: 100%;
+    }
 }
 
 .header__logo {
-    @include flex(flex-start, flex-start, 0);
+    @include flex(flex-start, center, 0);
     padding: 0;
+    
+    .header__logo--img {
+        display: inline-block;
+        height: $logo-height;
+        width: $logo-height;
+        padding: 0;
+    }
 
     .header__logo--text {
-        width: 40px;
+        margin-left: $space-sm;
+        width: 176px;
+        height: 30px;
     }
 }
 
-.header__tools {
-    @include flex(space-between, center, 1);
+.header__wrapper--tools {
+    @include flex(space-between, center, 0);
+    align-content: flex-end;
+    padding: 0;
 
     .header__tool {
-        height: $space-xl;
+        margin: 0 $space-sm;
     }
 
-    .header__tool--btn {
-        width: $space-xl;
-        height: $space-xl;
+    .tool__wrap--user {
+        margin-left: 0;
+    } 
+
+    .header__tool--btn  {
+        height: $icon-height;
+        width: $icon-height;
         padding: 0;
     }
 
     .header__tool--avatar {
+        @include flex(space-between, center,0);
         width: $space-xl;
         height: $space-xl;
         border-radius: 50%;
         display: block;
+        padding: 0;
+
+        .tool__wrap--user {
+            @include flex(space-between, center,0);
+        }
+
     }
 
-    .header__tool--username {
+    .tool__wrap--username {
         font-family: $lato;
-
+        position: relative;
+        bottom: $space-sm;
         .link {
             color: $primary-icons;
         }
@@ -57,8 +86,8 @@
     .header__tool--logout,
     .header__tool--wishlist {
         fill: $primary-icons;
-        width: $space-xl;
-        height: $space-xl;
+        width: $icon-height;
+        height: $icon-height;
     }
 
     .header__tool--search {
@@ -75,17 +104,29 @@
         height: $space-xxl;
     }
 
+    
+
     .tool__wrap--menu {
-        .header__tool--btn {
-            @include flex(space-between, flex-end, 0);
+        @include flex(space-between, center, 0);
+        .tool__menu--text {
+            padding:0 $space-md;
+        }
+
+        .tool__btn--menu {
+            @include flex(space-around, flex-start, 0);
             flex-direction: column;
             width: $space-xxl;
+            height: $space-xxl;
+            padding: 0;
         }
 
         .header__tool--menu {
             background: black;
             width: $space-xxl;
             height: 3px;
-        }
+    }
+    }
+    @include media-breakpoint-down(xs) {
+        max-width: 250px;
     }
 }
