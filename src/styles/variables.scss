@@ -2,16 +2,28 @@
 @import '../../node_modules/bootstrap/scss/variables';
 @import '../../node_modules/bootstrap/scss/mixins';
 
+//Space in px
+
 $space-sm:5px;
 $space-md:10px;
 $space-lg:15px;
 $space-xl:20px;
 $space-xxl:30px;
+$padding-header:80px;
+//Icon heights
 
+$icon-height-sm:15px;
+$icon-height-md:20px;
 $icon-height:25px;
-
-$wrapper-small:40px;
+//Logo height
 
 $logo-height:40px;
 
+//Fonts
+
 $lato: 'Lato', sans-serif;
+$roboto: 'Roboto', 'sans-serif';
+$font-standard: 16px;
+
+$font-light: 300;
+$font-md-bold: 700;
