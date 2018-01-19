@@ -1,0 +1,69 @@
+<div class="header">
+    <div class="container-fluid">
+        <div class="row header__wrapper">
+            <div class="col-6 col-sm-5 col-md-3 col-lg-6 col-xl-3 header__wrapper--logo">
+                <div class="header__logo">
+                    {{svg('site-logo', 'header__logo--img')}}
+                    {{svg('site-logo-text','header__logo--text d-none d-sm-inline-block')}}
+                </div>
+            </div>
+            <div class="col-6 col-sm-5 col-md-7 col-lg-6 col-xl-8 offset-sm-2 offset-md-2 offset-lg-0">
+                <div class="row header__wrapper--tools">
+                    <div class="col-12  header__wrapper--info">
+                        <div class="header__tool tool__wrap--phone d-none d-xl-inline-block">
+                        <span class="header__tool--phone">Helpline: <a class="link" href="#">800 141 141</a></span>
+                    </div>                
+                    <div class="tool__wrap--user header__tool">
+                        <div class="tool__wrap--avatar">
+                        
+                            <button class="header__tool--btn d-xl-none"><img class="header__tool--avatar" src="http://satyr.io/200x300/orange?delay=3g" alt="avatar"></button>
+                            <div class="tool__wrap--username d-none d-md-inline-block">
+                                {{svg('icon-user','header__tool--user d-none d-xl-inline-block')}}  
+                                <a class="link" href="#">Jana Novakova</a> | <a href="#" class="link"> Log out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__tool tool__wrap--logout d-md-none">
+                        <button class="header__tool--btn">{{svg('icon-logout','header__tool--logout')}}</button>
+                    </div>
+                    <div class="header__tool tool__wrap--wishlist">
+                        <button class="header__tool--btn">{{svg('icon-wishlist','header__tool--wishlist')}}</button>
+                        <span class="wishlist-status d-none d-xl-inline-block">Wish list is empty</span>
+                    </div>
+                    <div class="header__tool tool__wrap--question d-none d-xl-inline-block">
+                        <button class="header__tool--btn">{{svg('icon-questionmark','header__tool--help')}}</button>
+                    </div>
+                    <div class="header__tool tool__wrap--search d-xl-none">
+                        <button class="header__tool--btn">{{svg('icon-search','header__tool--search')}}</button>
+                    </div>
+                    <div class="header__tool tool__wrap--menu d-xl-none"> 
+                        <div class="d-none d-md-inline-block tool__menu--text">MENU</div>
+                        <button class="tool__btn--menu">
+                            <div class="header__tool--menu"></div>
+                            <div class="header__tool--menu"></div>
+                            <div class="header__tool--menu"></div>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                <div class="row d-none d-xl-block header__wrapper--nav">
+                    <div class="col-12">
+                        <ul class="header__nav">
+                            <li class="header__nav--item"><a class="link" href="#">Homepage</a></li>
+                            <li class="header__nav--item"><a class="link" href="#">About us</a></li>
+                            <li class="header__nav--item dropdown"><a class="link dropdown-toggle" href="#">Products</a></li>
+                            <li class="header__nav--item"><a class="link" href="#">Nutrition programs</a></li>
+                            <li class="header__nav--item"><a class="link" href="#">Articles</a></li>
+                            <li class="header__nav--item"><a class="link" href="#">Ambassador</a></li>
+                            <li class="header__nav--item"><button class="button-success" type="button">Health index</button></li>
+                            <li class="header__nav--item">
+                                <div class="header__nav--item tool__wrap--search">
+                                    <button class="header__nav-btn">{{svg('icon-search','header__nav--search')}}</button>
+                                </div>
+                            </li>
+                        </ul>  
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
