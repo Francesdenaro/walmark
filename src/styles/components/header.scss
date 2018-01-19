@@ -5,7 +5,7 @@
 
 .header {
     width: 100%;
-    min-width: 450px;
+    min-width: 500px;
     box-shadow: 0 5px 5px -4px rgba(0, 0, 0, .23);
     font-family: $lato;
     padding: $space-md;
@@ -25,10 +25,7 @@
 
 .header__wrapper {
     justify-content: center;
-
-    @include media-breakpoint-down(sm) {
-        justify-content: space-between;
-    }
+    align-items: center;
 }
 
 .header__wrapper--tools {
@@ -42,7 +39,6 @@
 
 .header__logo {
     @include flex(flex-start, center, 0);
-
     @include media-breakpoint-up(xl) {
         padding: $space-lg 0 0;
     }
