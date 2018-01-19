@@ -9,6 +9,10 @@
     box-shadow: 0 5px 5px -4px rgba(0, 0, 0, .23);
     font-family: $lato;
     padding: $space-md;
+
+    @include media-breakpoint-only(sm) {
+        min-width: 700px;
+    }
 }
 
 .container {
@@ -24,8 +28,12 @@
 }
 
 .header__wrapper {
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
+    @include media-breakpoint-down(sm) {
+        justify-content: flex-start;
+    }
 }
 
 .header__wrapper--tools {
@@ -39,6 +47,7 @@
 
 .header__logo {
     @include flex(flex-start, center, 0);
+
     @include media-breakpoint-up(xl) {
         padding: $space-lg 0 0;
     }
@@ -60,9 +69,9 @@
 }
 
 .header__wrapper--info {
-    @include flex(space-between, center, 0);
+    @include flex(space-between, center, 1);
     align-content: flex-end;
-    padding: 0;
+    margin: 0 $space-md 0  0;
 
     @include media-breakpoint-up(xl) {
         justify-content: flex-end;
@@ -75,8 +84,9 @@
     .header__tool {
         margin: 0 $space-sm;
         font-weight: $font-light;
+
         @include media-breakpoint-down(sm) {
-            margin: 0 $space-md;
+            margin: 0 $space-lg;
         }
     }
 
@@ -211,7 +221,7 @@
 
 .header__wrapper--nav {
     .header__nav {
-        @include flex(space-between, flex-end, 1);
+        @include flex(space-between, baseline, 1);
     }
 
     .link {
@@ -231,5 +241,10 @@
     .tool__wrap--search .header__tool--btn {
         width: $space-xxl;
         height: $space-xxl;
+        align-self: center;
+    }
+
+    .button-success {
+        min-width: 140px;
     }
 }

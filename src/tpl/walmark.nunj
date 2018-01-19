@@ -11,5 +11,6 @@
 {% block content %}
     
     {% include 'components/header.nunj' %}
+    {% include 'components/greeting.nunj' %}
 
 {% endblock %}

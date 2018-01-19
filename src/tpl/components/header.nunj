@@ -1,15 +1,15 @@
 <div class="header">
     <div class="container-fluid">
         <div class="row header__wrapper">
-            <div class="col-3 col-sm-5 col-md-3 col-lg-6 col-xl-3 offset-1 offset-sm-0 header__wrapper--logo">
+            <div class="col-2 col-sm-5 col-md-3 col-lg-6 col-xl-3 offset-sm-0 header__wrapper--logo">
                 <div class="header__logo">
                     {{svg('site-logo', 'header__logo--img')}}
                     {{svg('site-logo-text','header__logo--text d-none d-sm-inline-block')}}
                 </div>
             </div>
-            <div class="col-6 col-sm-5 col-md-7 col-lg-6 col-xl-8 offset-sm-2 offset-md-2 offset-lg-0">
+            <div class="col-6 col-sm-5 col-md-7 col-lg-6 col-xl-8 offset-3 offset-sm-2 offset-md-2 offset-lg-0">
                 <div class="row header__wrapper--tools">
-                    <div class="col-12  header__wrapper--info">
+                    <div class="col-12 header__wrapper--info">
                         <div class="header__tool tool__wrap--phone d-none d-xl-inline-block">
                         <span class="header__tool--phone">Helpline: <a class="link" href="#">800 141 141</a></span>
                     </div>                
@@ -56,8 +56,8 @@
                             <li class="header__nav--item"><a class="link" href="#">Articles</a></li>
                             <li class="header__nav--item"><a class="link" href="#">Ambassador</a></li>
                             <li class="header__nav--item"><button class="button-success" type="button">Health index</button></li>
-                            <li class="header__nav--item">
-                                <div class="header__nav--item tool__wrap--search">
+                            <li class="header__nav--item tool__wrap--search">
+                                <div class="header__nav--item">
                                     <button class="header__nav-btn">{{svg('icon-search','header__nav--search')}}</button>
                                 </div>
                             </li>
