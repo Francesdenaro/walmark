@@ -1,6 +1,5 @@
-.container-fluid {
+.header {
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, .23);
-    min-width: $xs-min-width;
 }
 
 .header__wrapper {
@@ -26,8 +25,7 @@
         display: inline-block;
 
         @include media-breakpoint-up (xl) {
-            width: $icon-height-md;
-            height: $icon-height-md;
+            @include size ($icon-height-md);
         }
     }
 }
@@ -37,8 +35,7 @@
     height: $logo-height;
 
     .logo__img {
-        height: $logo-height;
-        width: $logo-height;
+        @include size ($logo-height);
     }
 
     .logo__text {
@@ -71,42 +68,36 @@
     }
 }
 
+.btn__wishlist,
 .wrapper__logout,
 .header__btn,
 .avatar__img,
 .wrapper__avatar {
-    height: $icon-height;
-    width: $icon-height;
+    @include size ($icon-height);
 
     .logout__img,
     .wishlist__img {
         fill: $primary-icons;
-        height: $icon-height;
-        width: $icon-height;
+        @include size ($icon-height);
     }
 }
 
 .wrapper__wishlist {
     @include flex (space-between, flex-start);
-    height: $icon-height;
-    width: $icon-height;
 
     @include media-breakpoint-up (xl) {
-        min-width: $wishlist-xl-width;
         margin: 0 $space-lg;
     }
 }
 
 .user__img {
-    height: $icon-height-sm;
-    width: $icon-height-sm;
+    @include size ($icon-height-sm);
     fill: $secondary-icons;
 }
 
 .wrapper__search,
 .search__img {
-    height: $icon-height-lg;
-    width: $icon-height-lg;
+    @include size ($icon-height-lg);
 }
 
 .search__img {
@@ -118,12 +109,10 @@
 .wrapper__help {
     background: $secondary-navbar;
     border-radius: 50%;
-    height: $icon-height-md;
-    width: $icon-height-md;
+    @include size ($icon-height-md);
 
     .help__img {
-        height: $icon-height-md;
-        width: $icon-height-md;
+        @include size ($icon-height-md);
         padding: $space-sm;
     }
 }
@@ -165,14 +154,11 @@
         .nav__link {
             display: inline-block;
             padding: 0 $space-md;
-        }
-
-        .link {
             color: black;
         }
     }
 
-    .button-success {
+    .nav__button {
         min-width: $btn-success-width;
     }
 }

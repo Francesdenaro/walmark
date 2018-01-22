@@ -37,7 +37,7 @@
     {% include "../components/cookie-law.nunj" %}
     
     <header>
-        <div class="container-fluid">
+        <div class="container-fluid header">
             {% include 'components/header.nunj' %}
         </div>
     </header>
