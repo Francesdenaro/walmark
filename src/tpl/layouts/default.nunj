@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ _cssPath }}/main{% if not _dev %}.min{% endif %}.css">
-
+    {% from "../helpers/svg.nunj" import svg as svg %}
     {% if firstVisit %}
         <script>
             {# cookie expired after 24 hours #}
@@ -35,11 +35,17 @@
 </head>
 <body>
     {% include "../components/cookie-law.nunj" %}
-
+    
+    <header>
+        <div class="container-fluid">
+            {% include 'components/header.nunj' %}
+        </div>
+    </header>
     {# Main content of the page #}
     <main>
         <div class="container">
-            {% block content %}{% endblock %}
+            {% block content %}
+            {% endblock %}
         </div>
     </main>
 

@@ -2,29 +2,52 @@
 @import '../../node_modules/bootstrap/scss/variables';
 @import '../../node_modules/bootstrap/scss/mixins';
 
+// Viewport width
+
+$xs-min-width: 320px;
+
+// Wrapper widths
+
+$tools-xs-width: 200px;
+$tools-md-width: 440px;
+$tools-xl-width: 620px;
+$wishlist-xl-width: 150px;
+$btn-success-width: 150px;
+
 //Space in px
 
-$space-sm:5px;
-$space-md:10px;
-$space-lg:15px;
-$space-xl:20px;
-$space-xxl:30px;
-$padding-header:80px;
-$logo-margin-sm:50px;
+$space-sm: 5px;
+$space-md: 10px;
+$space-lg: 15px;
+$space-xl: 20px;
+$space-xxl: 30px;
+$padding-header: 80px;
+$logo-margin-sm: 50px;
+
 //Icon heights
 
-$icon-height-sm:15px;
-$icon-height-md:20px;
-$icon-height:25px;
-//Logo height
+$icon-height-sm: 15px;
+$icon-height-md: 20px;
+$icon-height: 25px;
+$icon-height-lg : 30px;
 
-$logo-height:40px;
+//Logo measures
+
+$logo-height: 40px;
+$logo-text-width: 180px;
+$logo-text-height: 30px;
+
+// Menu - menu bars 
+$menu-md-width: 90px;
+$menu-height: 21px;
+$menu-bar-height: 3px;
+$menu-bar-width: 27px;
 
 //Fonts
 
 $lato: 'Lato', sans-serif;
-$roboto: 'Roboto', 'sans-serif';
+$roboto: 'Roboto', sans-serif;
 $font-standard: 16px;
-
 $font-light: 300;
-$font-md-bold: 700;
+$font-regular: 400;
+$font-bold: 700;

@@ -2,12 +2,20 @@
 @import 'bootstrap/bootstrap';
 @import 'base/*';
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', $font-family-base;
 
     &.wf-active {
         font-family: $font-family-base;
     }
+}
+
+header {
+    min-width: 100%;
 }
 
 @import 'components/*';

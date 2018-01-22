@@ -2,14 +2,12 @@ button {
     border: none;
     background: transparent;
     margin: 0;
+    border-radius: 4px;
+    padding: 0;
 }
 
 .button-success {
-    border: none;
-    border-radius: 4px;
     color: white;
-    background: #009639;
-    padding: $space-sm 0;
+    background: $success;
+    padding: $space-sm $space-md;
 }
-
-

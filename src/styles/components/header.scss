@@ -1,250 +1,178 @@
-* {
-    box-sizing: border-box;
-    font-size: $font-standard;
-}
-
-.header {
-    width: 100%;
-    min-width: 500px;
-    box-shadow: 0 5px 5px -4px rgba(0, 0, 0, .23);
-    font-family: $lato;
-    padding: $space-md;
-
-    @include media-breakpoint-only(sm) {
-        min-width: 700px;
-    }
-}
-
-.container {
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
 .container-fluid {
-    max-width: 1200px;
-    min-width: 320px;
-    margin: 0 auto;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .23);
+    min-width: $xs-min-width;
 }
 
 .header__wrapper {
-    justify-content: space-between;
-    align-items: center;
-
-    @include media-breakpoint-down(sm) {
-        justify-content: flex-start;
-    }
+    @include flex (space-between, center);
+    padding: $space-md 0;
 }
 
-.header__wrapper--tools {
-    @include flex (space-between, center,0);
+.header__tools {
+    @include flex (space-between, center);
+    min-width: $tools-xs-width;
+    font-family: $lato;
+    font-weight: $font-light;
 
-    .header__wrapper--logo {
-        padding: 0;
-        max-width: 100%;
+    @include media-breakpoint-up (md) {
+        min-width: $tools-md-width;
+    }
+
+    @include media-breakpoint-up (xl) {
+        justify-content: flex-end;
+    }
+
+    .header__btn {
+        display: inline-block;
+
+        @include media-breakpoint-up (xl) {
+            width: $icon-height-md;
+            height: $icon-height-md;
+        }
     }
 }
 
 .header__logo {
-    @include flex(flex-start, center, 0);
+    @include flex (flex-start, center);
+    height: $logo-height;
 
-    @include media-breakpoint-up(xl) {
-        padding: $space-lg 0 0;
-    }
-
-    .header__logo--img {
-        display: inline-block;
+    .logo__img {
         height: $logo-height;
         width: $logo-height;
-        padding: 0;
-        overflow: visible;
     }
 
-    .header__logo--text {
+    .logo__text {
+        height: $logo-text-height;
+        width: $logo-text-width;
         margin-left: $space-sm;
-        width: 176px;
-        height: 30px;
-        overflow: visible;
     }
 }
 
-.header__wrapper--info {
-    @include flex(space-between, center, 1);
-    align-content: flex-end;
-    margin: 0 $space-md 0  0;
+.wrapper__phone {
+    padding: 0 $space-lg;
 
-    @include media-breakpoint-up(xl) {
-        justify-content: flex-end;
+    .link {
+        font-weight: $font-bold;
+        color: black;
     }
+}
 
-    @include media-breakpoint-down(xs) {
-        max-width: 200px;
+.avatar__img {
+    border-radius: 50%;
+}
+
+.wrapper__username {
+    @include flex (space-between, flex-start);
+
+    @include media-breakpoint-up (xl) {
+        border-left: 1px solid $secondary-navbar;
+        border-right: 1px solid $secondary-navbar;
+        padding: 0 $space-lg;
     }
+}
 
-    .header__tool {
-        margin: 0 $space-sm;
-        font-weight: $font-light;
+.wrapper__logout,
+.header__btn,
+.avatar__img,
+.wrapper__avatar {
+    height: $icon-height;
+    width: $icon-height;
 
-        @include media-breakpoint-down(sm) {
-            margin: 0 $space-lg;
-        }
-    }
-
-    .tool__wrap--phone {
-        margin: 0;
-
-        .header__tool--phone .link {
-            font-weight: $font-md-bold;
-            color: black;
-            border-right: 1px solid $text-border;
-            padding-right: $space-xl;
-        }
-    }
-
-    .tool__wrap--user {
-        margin-left: 0;
-    }
-
-    .header__tool--btn {
-        height: $icon-height;
-        width: $icon-height;
-        padding: 0;
-
-        @include media-breakpoint-up(xl) {
-            height: $space-xl;
-            width: $space-xl;
-        }
-    }
-
-    .header__tool--user {
-        width: $icon-height;
-        height: $icon-height-sm;
-        fill: $secondary-icons;
-    }
-
-    .header__tool--avatar {
-        @include flex(space-between, center,0);
-        width: $icon-height;
-        height: $icon-height;
-        border-radius: 50%;
-        display: block;
-        padding: 0;
-    }
-
-    .tool__wrap--username {
-        position: relative;
-        bottom: $space-sm;
-
-        .link {
-            color: $primary-icons;
-        }
-
-        @include media-breakpoint-up(xl) {
-            border-right: 1px solid $text-border;
-            padding: 0 $space-xl;
-            bottom: 0;
-        }
-    }
-
-    .tool__wrap--wishlist {
-        @include media-breakpoint-up(xl) {
-            margin-left: $space-lg;
-        }
-    }
-
-    .header__tool--logout,
-    .header__tool--wishlist {
+    .logout__img,
+    .wishlist__img {
         fill: $primary-icons;
-        width: $icon-height;
         height: $icon-height;
+        width: $icon-height;
     }
+}
 
-    .wishlist-status {
-        position: relative;
-        left: $space-sm;
-        bottom: $space-sm;
-        font-weight: $font-light;
+.wrapper__wishlist {
+    @include flex (space-between, flex-start);
+    height: $icon-height;
+    width: $icon-height;
+
+    @include media-breakpoint-up (xl) {
+        min-width: $wishlist-xl-width;
+        margin: 0 $space-lg;
     }
+}
 
-    .header__tool--search {
-        width: $space-xxl;
-        height: $space-xxl;
-        border: 2px solid $primary-icons;
-        border-radius: 50%;
+.user__img {
+    height: $icon-height-sm;
+    width: $icon-height-sm;
+    fill: $secondary-icons;
+}
+
+.wrapper__search,
+.search__img {
+    height: $icon-height-lg;
+    width: $icon-height-lg;
+}
+
+.search__img {
+    border: 2px solid $primary-icons;
+    border-radius: 50%;
+    padding: $space-sm;
+}
+
+.wrapper__help {
+    background: $secondary-navbar;
+    border-radius: 50%;
+    height: $icon-height-md;
+    width: $icon-height-md;
+
+    .help__img {
+        height: $icon-height-md;
+        width: $icon-height-md;
         padding: $space-sm;
     }
+}
 
-    .tool__wrap--search,
-    .tool__wrap--search .header__tool--btn {
-        width: $space-xxl;
-        height: $space-xxl;
+.wrapper__menu {
+    @include flex (space-between, center);
+    height: $menu-height;
+    width: $icon-height-lg;
+    font-weight: $font-bold;
+
+    @include media-breakpoint-up (md) {
+        width: $menu-md-width;
     }
 
-    .tool__wrap--question,
-    .tool__wrap--question .header__tool--btn {
-        width: $icon-height-md;
-        height: $icon-height-md;
-        padding: 0;
-        background: $question-background;
-        border-radius: 50%;
+    .menu__bars {
+        @include flex (space-between, flex-end);
+        flex-direction: column;
+        align-content: flex-end;
+        height: $menu-height;
+        width: $icon-height-lg;
+
+        .menu__bar {
+            height: $menu-bar-height;
+            width: $menu-bar-width;
+            background: black;
+        }
     }
+}
 
-    .header__tool--help {
-        width: $icon-height-md;
-        height: $icon-height-md;
-        padding: $space-sm;
-    }
+.header__nav {
+    font-weight: $font-bold;
 
-    .tool__wrap--menu {
-        @include flex(space-between, center, 0);
-        font-weight: $font-md-bold;
+    .nav__links {
+        @include flex (space-between, center);
+        list-style: none;
+        margin: 0;
+        padding: $space-sm 0;
 
-        .tool__menu--text {
+        .nav__link {
+            display: inline-block;
             padding: 0 $space-md;
         }
 
-        .tool__btn--menu {
-            @include flex(space-around, flex-start, 0);
-            flex-direction: column;
-            width: $space-xxl;
-            height: $space-xxl;
-            padding: 0;
+        .link {
+            color: black;
         }
-
-        .header__tool--menu {
-            background: black;
-            width: $space-xxl;
-            height: 3px;
-        }
-    }
-}
-
-.header__wrapper--nav {
-    .header__nav {
-        @include flex(space-between, baseline, 1);
-    }
-
-    .link {
-        font-weight: $font-md-bold;
-        color: black;
-    }
-
-    .header__nav--search {
-        width: $space-xxl;
-        height: $space-xxl;
-        border: 2px solid $primary-icons;
-        border-radius: 50%;
-        padding: $space-sm;
-    }
-
-    .tool__wrap--search,
-    .tool__wrap--search .header__tool--btn {
-        width: $space-xxl;
-        height: $space-xxl;
-        align-self: center;
     }
 
     .button-success {
-        min-width: 140px;
+        min-width: $btn-success-width;
     }
 }
