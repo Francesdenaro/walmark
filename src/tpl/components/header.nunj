@@ -15,7 +15,7 @@
                     </button>                    
                 </div>
                 <div class="wrapper__username tools__wrapper d-none d-md-inline-block">
-                    <button class="button username__btn d-none d-xl-inline-block">{{svg('icon-user','user__img')}}</button>  
+                    <button class="button username__btn d-none d-xl-inline-block">{{svg('icon-user','username__img')}}</button>  
                     <a class="link" href="#">Jana Novakova</a> | <a href="#" class="link"> Log out</a>
                 </div>
                 <div class="wrapper__logout tools__wrapper d-md-none">

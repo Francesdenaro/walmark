@@ -124,12 +124,14 @@ $btn-navbar-width: 150px;
                 padding: 0 $space-lg;
             }
 
-            .username__btn {
-                @include size ($icon-height-sm);
-            }
+            .username {
+                &__btn {
+                    @include size ($icon-height-sm);
+                }
 
-            .user__img {
-                fill: $secondary-dark;
+                &__img {
+                    fill: $secondary-dark;
+                }
             }
         }
 
@@ -155,19 +157,22 @@ $btn-navbar-width: 150px;
                 width: $menu-md-width;
             }
 
-            .menu__bars {
+            .menu {
+                &__bars {
                 @include flex (space-between, flex-end);
                 flex-direction: column;
                 align-content: flex-end;
                 height: $menu-height;
                 width: $icon-height-lg;
 
-                .menu__bar {
+                &__bar {
                     height: $menu-bar-height;
                     width: $menu-bar-width;
                     background: black;
+                    }
                 }
             }
+
         }
 
         &__help {
@@ -186,13 +191,15 @@ $btn-navbar-width: 150px;
         &__search {
             @include size ($icon-height-lg);
 
-            .search__btn {
-                width: 100%;
-                height: 100%;
-                border: 2px solid $primary;
-                border-radius: 50%;
+            .search {
+                &__btn {
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid $primary;
+                    border-radius: 50%;
+                }
 
-                .search__img {
+                &__img {
                     fill: black;
                     padding: $space-sm;
                 }
