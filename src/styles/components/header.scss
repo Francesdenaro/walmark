@@ -39,14 +39,16 @@ $btn-navbar-width: 150px;
         @include flex (flex-start, center);
         height: $logo-height;
 
-        .logo__img {
-            @include size ($logo-height);
-        }
+        .logo {
+            &__img {
+                @include size ($logo-height);
+            }
 
-        .logo__text {
-            height: $logo-text-height;
-            width: $logo-text-width;
-            margin-left: $space-sm;
+            &__text {
+                height: $logo-text-height;
+                width: $logo-text-width;
+                margin-left: $space-sm;
+            }
         }
     }
 
@@ -68,24 +70,26 @@ $btn-navbar-width: 150px;
     &__nav {
         font-weight: $font-bold;
 
-        .nav__links {
-            @include flex (space-between, center);
-            list-style: none;
-            margin: 0;
-            padding: $space-sm 0;
+        .nav {
+            &__links {
+                @include flex (space-between, center);
+                list-style: none;
+                margin: 0;
+                padding: $space-sm 0;
+            }
 
-            .nav__item {
+            &__item {
                 display: inline-block;
                 margin-left: $space-xl;
-
-                .nav__link {
-                    color: black;
-                }
             }
-        }
 
-        .nav__button {
-            min-width: $btn-navbar-width;
+            &__link {
+                color: black;
+            }
+
+            &__button {
+                min-width: $btn-navbar-width;
+            }
         }
     }
 
@@ -163,16 +167,15 @@ $btn-navbar-width: 150px;
                     flex-direction: column;
                     align-content: flex-end;
                     height: $menu-height;
-                    width: $icon-height-lg;   
+                    width: $icon-height-lg;
                 }
-                
-                &__bar {
-                        height: $menu-bar-height;
-                        width: $menu-bar-width;
-                        background: black;
-                        }
-            }
 
+                &__bar {
+                    height: $menu-bar-height;
+                    width: $menu-bar-width;
+                    background: black;
+                }
+            }
         }
 
         &__help {
