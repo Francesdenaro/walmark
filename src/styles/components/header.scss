@@ -159,18 +159,18 @@ $btn-navbar-width: 150px;
 
             .menu {
                 &__bars {
-                @include flex (space-between, flex-end);
-                flex-direction: column;
-                align-content: flex-end;
-                height: $menu-height;
-                width: $icon-height-lg;
-
-                &__bar {
-                    height: $menu-bar-height;
-                    width: $menu-bar-width;
-                    background: black;
-                    }
+                    @include flex (space-between, flex-end);
+                    flex-direction: column;
+                    align-content: flex-end;
+                    height: $menu-height;
+                    width: $icon-height-lg;   
                 }
+                
+                &__bar {
+                        height: $menu-bar-height;
+                        width: $menu-bar-width;
+                        background: black;
+                        }
             }
 
         }
