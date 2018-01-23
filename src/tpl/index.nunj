@@ -4,7 +4,6 @@
 
 {% block content %}
     <h1 class="js-suffix">Pages</h1>
-    <div class="plus-one"></div>
     <ul>
         <li><a href="/styleguide">Styleguide</a></li>
         {% for path in _pages %}
@@ -12,8 +11,6 @@
         {% endfor %}
     </ul>
 
-    <div id="timer"></div>
-    <div class="plus-one"></div>
-
-    {% include 'components/p.nunj' %}
+ {% include 'components/p.nunj' %}
+ 
 {% endblock %}

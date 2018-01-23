@@ -1,0 +1,212 @@
+
+
+// Menu - menu bars 
+$menu-md-width: 90px;
+$menu-height: 21px;
+$menu-bar-height: 3px;
+$menu-bar-width: 27px;
+
+// Wrapper widths
+
+$tools-xs-width: 200px;
+$tools-md-width: 440px;
+$tools-xl-width: 620px;
+$btn-navbar-width: 150px;
+
+.header {
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .23);
+
+    &__btn {
+        display: inline-block;
+
+        @include size($icon-height);
+
+        @include media-breakpoint-up (xl) {
+            @include size ($icon-height-md);
+        }
+    }
+
+    &__wrapper {
+        @include flex (space-between, center);
+        padding: $space-md 0;
+    }
+
+    &__logo {
+        $logo-height: 40px;
+        $logo-text-width: 180px;
+        $logo-text-height: 30px;
+
+        @include flex (flex-start, center);
+        height: $logo-height;
+
+        .logo {
+            &__img {
+                @include size ($logo-height);
+            }
+
+            &__text {
+                height: $logo-text-height;
+                width: $logo-text-width;
+                margin-left: $space-sm;
+            }
+        }
+    }
+
+    &__tools {
+        @include flex (space-between, center);
+        min-width: $tools-xs-width;
+        font-family: $lato;
+        font-weight: $font-light;
+
+        @include media-breakpoint-up (md) {
+            min-width: $tools-md-width;
+        }
+
+        @include media-breakpoint-up (xl) {
+            justify-content: flex-end;
+        }
+    }
+
+    &__nav {
+        font-weight: $font-bold;
+
+        .nav {
+            &__links {
+                @include flex (space-between, center);
+                list-style: none;
+                margin: 0;
+                padding: $space-sm 0;
+            }
+
+            &__item {
+                display: inline-block;
+                margin-left: $space-xl;
+            }
+
+            &__link {
+                color: black;
+            }
+
+            &__button {
+                min-width: $btn-navbar-width;
+            }
+        }
+    }
+
+    .wrapper {
+        &__phone {
+            padding: 0 $space-lg;
+
+            .phone__link {
+                color: black;
+                font-weight: $font-bold;
+            }
+        }
+
+        &__logout {
+            @include size ($icon-height);
+
+            .logout__img {
+                fill: $primary;
+            }
+        }
+
+        &__avatar {
+            .avatar__img {
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__username {
+            @include flex (space-between, flex-start);
+
+            @include media-breakpoint-up (xl) {
+                border-left: 1px solid $secondary-light;
+                border-right: 1px solid $secondary-light;
+                padding: 0 $space-lg;
+            }
+
+            .username {
+                &__btn {
+                    @include size ($icon-height-sm);
+                }
+
+                &__img {
+                    fill: $secondary-dark;
+                }
+            }
+        }
+
+        &__wishlist {
+            @include flex (space-between, flex-start);
+
+            .wishlist__img {
+                fill: $primary;
+            }
+
+            @include media-breakpoint-up (xl) {
+                margin: 0 $space-lg;
+            }
+        }
+
+        &__menu {
+            @include flex (space-between, center);
+            height: $menu-height;
+            width: $icon-height-lg;
+            font-weight: $font-bold;
+
+            @include media-breakpoint-up (md) {
+                width: $menu-md-width;
+            }
+
+            .menu {
+                &__bars {
+                    @include flex (space-between, flex-end);
+                    flex-direction: column;
+                    align-content: flex-end;
+                    height: $menu-height;
+                    width: $icon-height-lg;
+                }
+
+                &__bar {
+                    height: $menu-bar-height;
+                    width: $menu-bar-width;
+                    background: black;
+                }
+            }
+        }
+
+        &__help {
+            background: $secondary-light;
+            border-radius: 50%;
+
+            @include size ($icon-height-md);
+
+            .help__img {
+                @include size ($icon-height-md);
+                fill: black;
+                padding: $space-sm;
+            }
+        }
+
+        &__search {
+            @include size ($icon-height-lg);
+
+            .search {
+                &__btn {
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid $primary;
+                    border-radius: 50%;
+                }
+
+                &__img {
+                    fill: black;
+                    padding: $space-sm;
+                }
+            }
+        }
+    }
+}

@@ -1,23 +1,35 @@
-// Main color variables
-$blue:    #007bff;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #e83e8c;
-$red:     #dc3545;
-$orange:  #fd7e14;
-$yellow:  #ffc107;
-$green:   #28a745;
-$teal:    #20c997;
-$cyan:    #17a2b8;
+// Colors
 
-$theme-colors: (
-    primary: $teal,
-    secondary: $pink,
-    success: $green,
-    info: $cyan,
-    warning: $yellow,
-    danger: $red
-);
+$primary: #ff6900;
+$secondary-light: #d8d8d8;
+$secondary-dark: #4d4d4d;
+$success: #009639;
+
+//Space in px
+
+$space-sm: 5px;
+$space-md: 10px;
+$space-lg: 15px;
+$space-xl: 20px;
+$space-xxl: 30px;
+$padding-header: 80px;
+$logo-margin-sm: 50px;
+
+//Icon heights
+
+$icon-height-sm: 15px;
+$icon-height-md: 20px;
+$icon-height: 25px;
+$icon-height-lg : 30px;
+
+//Fonts
+
+$lato: 'Lato', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$font-standard: 16px;
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
 
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../../node_modules/bootstrap/scss/variables';
