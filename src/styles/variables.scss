@@ -1,6 +1,9 @@
-@import '../../node_modules/bootstrap/scss/functions';
-@import '../../node_modules/bootstrap/scss/variables';
-@import '../../node_modules/bootstrap/scss/mixins';
+// Colors
+
+$primary: #ff6900;
+$secondary-light: #d8d8d8;
+$secondary-dark: #4d4d4d;
+$success: #009639;
 
 // Viewport width
 
@@ -11,7 +14,7 @@ $xs-min-width: 320px;
 $tools-xs-width: 200px;
 $tools-md-width: 440px;
 $tools-xl-width: 620px;
-$btn-success-width: 150px;
+$btn-navbar-width: 150px;
 
 //Space in px
 
@@ -30,18 +33,6 @@ $icon-height-md: 20px;
 $icon-height: 25px;
 $icon-height-lg : 30px;
 
-//Logo measures
-
-$logo-height: 40px;
-$logo-text-width: 180px;
-$logo-text-height: 30px;
-
-// Menu - menu bars 
-$menu-md-width: 90px;
-$menu-height: 21px;
-$menu-bar-height: 3px;
-$menu-bar-width: 27px;
-
 //Fonts
 
 $lato: 'Lato', sans-serif;
@@ -50,3 +41,7 @@ $font-standard: 16px;
 $font-light: 300;
 $font-regular: 400;
 $font-bold: 700;
+
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';

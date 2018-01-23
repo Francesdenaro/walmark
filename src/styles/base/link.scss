@@ -1,7 +1,12 @@
 .link {
-    color: $primary-link;
+    color: $primary;
 }
 
-.--menu {
+.nav__link {
+    color:black;
+}
+
+.phone__link {
+    font-weight: $font-bold;
     color: black;
 }
