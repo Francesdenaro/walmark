@@ -1,0 +1,70 @@
+.greeting {
+    $invite-height: 40px;
+    $invite-btn-width:75px;
+
+    @include flex (center, stretch);
+    flex-wrap: wrap;
+    font-weight: $font-light;
+
+    @include media-breakpoint-up (md) {
+        flex-wrap: nowrap;
+    }
+
+    &__box {
+        flex-grow: 1;
+        border: $smooth-border solid $border-light;
+        border-radius: $smooth-border;
+        margin: $space-lg $space-sm;
+        padding: $space-xl $space-xl;
+    }
+
+    &__status {
+        .status__period {
+            font-weight: $font-bold;
+        }
+    }
+
+    &__invite {
+        background: $light-box-bg;
+        padding-bottom: $space-lg;
+
+        .invite {
+            &__form {
+                @include flex (flex-start, baseline);
+                flex-wrap: nowrap;
+                padding-top: $space-sm;
+
+                @include media-breakpoint-up (sm) {
+                    justify-content: space-between;
+                }
+            }
+
+            &__field {
+                padding: $space-sm;
+                min-height: $invite-height;
+            }
+
+            &__email {
+                flex-grow: 2;
+                margin: 0;
+                padding: 0;
+            }
+
+            &__button {
+                position: relative;
+                left: -$space-md;
+                min-height: $invite-height;
+                min-width: $invite-btn-width;
+
+                @include media-breakpoint-up (sm) {
+                    flex-grow: 1;
+                    margin-left: $space-xxl;
+                }
+
+                @include media-breakpoint-up (md) {
+                    margin-left: $space-lg;
+                }
+            }
+        }
+    }
+}
