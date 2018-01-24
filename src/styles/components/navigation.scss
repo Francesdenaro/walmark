@@ -1,0 +1,21 @@
+.navigation {
+    @include flex (flex-start, stretch);
+    flex-direction: column;
+
+    &__box {
+        padding: $space-md;
+        background: $light-box-bg;
+
+        &:not(:last-child) {
+            margin-bottom: $space-xs;
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            background: $light-box-bg;
+            width: 50px;
+            height: 10px;
+        }
+    }
+}
