@@ -1,21 +1,31 @@
 .greeting {
     $invite-height: 40px;
     $invite-btn-width:75px;
+    margin: $space-lg 0;
 
     @include flex (center, stretch);
-    flex-wrap: wrap;
+    flex-direction: column;
     font-weight: $font-light;
 
     @include media-breakpoint-up (md) {
-        flex-wrap: nowrap;
+        flex-direction: row;
     }
 
     &__box {
         flex-grow: 1;
         border: $smooth-border solid $border-light;
         border-radius: $smooth-border;
-        margin: $space-lg $space-sm;
         padding: $space-xl $space-xl;
+
+        &:not(:last-child) {
+            margin-bottom: $space-md;
+        }
+
+        @include media-breakpoint-up (md) {
+            &:not(:last-child) {
+                margin: 0 $space-xl 0 0;
+            }
+        }
     }
 
     &__status {
@@ -50,11 +60,14 @@
                 padding: 0;
             }
 
-            &__button {
-                position: relative;
-                left: -$space-md;
+            &__button {                
                 min-height: $invite-height;
                 min-width: $invite-btn-width;
+
+                @include media-breakpoint-down (sm) {
+                    position: relative;
+                    left: -$space-md;
+                } 
 
                 @include media-breakpoint-up (sm) {
                     flex-grow: 1;
