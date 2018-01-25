@@ -1,11 +1,36 @@
 <div class="navigation">
-    <button class="button navigation__button">
-        Health index
-    </button>
-    <button class="button navigation__button">
-        My orders
-    </button>
-    <button class="button navigation__button">
-        Profile settings
-    </button>
+    <div class="navigation__bar navigation__main">
+        <button class="button navigation__button main__button">
+            Health index
+        </button>
+        <button class="button navigation__button main__button active">
+            My orders
+        </button>
+        <button class="button navigation__button main__button">
+            Profile settings
+        </button>
+    </div>
+    <div class="navigation__bar navigation__secondary d-none d-md-flex">
+        <button class="button navigation__button secondary__button">
+            My current health index
+        </button>
+        <button class="button navigation__button secondary__button">
+            My personalised plan
+        </button>
+        <button class="button navigation__button secondary__button">
+            My personal Health Support Pack
+        </button>
+        <button class="button navigation__button secondary__button active">
+            Extra tips
+        </button>
+        <button class="button navigation__button secondary__button">
+            My comparisons
+        </button>
+        <button class="button navigation__button secondary__button">
+            My health index history
+        </button>
+        <button class="button navigation__button secondary__button">
+            Write review
+        </button>
+    </div>
 </div>

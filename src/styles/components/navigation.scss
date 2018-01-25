@@ -1,38 +1,123 @@
 .navigation {
-    @include flex (flex-start, stretch);
-    margin-bottom: $space-big;
-    flex-direction: column;
-    width: 100vw;
+    $navbar-height: 60px;
+    $subnav-height: 50px;
+    $subnav-btn-width: 130px;
+    $arrow-size: 25px;
     position: absolute;
     left: 0;
+    right: 0;
 
-    /* @include media-breakpoint-up (md) {
-        flex-direction: row;
+    &__bar {
+        @include flex (center, stretch);
+        flex-direction: column;
+
+        @include media-breakpoint-up (md) {
+            flex-direction: row;
+            border: $smooth-border solid $border-light;
+            border-width: $smooth-border 0;
+        }
     }
-    */
-    
-    &__button {
-        padding: $space-md;
-        background: $light-box-bg;
-        position: relative;
-        text-align: left;
-        font-size: $size-nav-btn;
 
-        /* @include media-breakpoint-up (md) {
-            flex-grow: 1;
-            text-align: center;
-        } */
-
-        &:not(:last-child) {
-            margin-bottom: $space-xs;
+    &__main {
+        @include media-breakpoint-up (md) {
+            background: $light-box-bg;
         }
 
-        &:focus,
-        &:active {
+        .main {
+            &__button {
+                padding: $space-md;
+                font-size: $size-nav-btn;
+                text-align: left;
+                background: $light-box-bg;
+
+                @include media-breakpoint-down (sm) {
+                    &:not(:last-child) {
+                        margin-bottom: $space-xs;
+                    }
+                }
+
+                @include media-breakpoint-up (md) {
+                    min-height: 60px;
+
+                    &:not(:last-child) {
+                        margin-right: $space-extra;
+                    }
+
+                    &:hover::after,
+                    &.active::after {
+                        @include size ($arrow-size);
+                        position: absolute;
+                        z-index: 3;
+                        top: 100%;
+                        left: 50%;
+                        transform: translate(-50%, -40%) rotate(45deg);
+                        background: $light-box-bg;
+                        border: $smooth-border solid $border-light;
+                        border-width: 0 $smooth-border $smooth-border 0;
+                        border-radius: $smooth-border;
+                        content: ' ';
+                    }
+                }
+            }
+        }
+    }
+
+    &__secondary {
+        justify-content: space-between;
+        padding: 0 $space-xxl;
+        border-width: 0 0 $smooth-border;
+        background: white;
+
+        @include media-breakpoint-only(lg) {
+            min-height: $navbar-height;
+        }
+
+        .secondary {
+            &__button {
+                padding: $space-md;
+                max-width: $subnav-btn-width;
+                font-size: $size-nav-secondary;
+
+                @include media-breakpoint-up (lg) {
+                    max-width: none;
+                    padding: $space-lg;
+                }
+
+                &:hover::after,
+                &.active::after {
+                    @include size ($arrow-size);
+                    position: absolute;
+                    z-index: 3;
+                    top: 100%;
+                    left: 50%;
+                    transform: translate(-50%, -40%) rotate(45deg);
+                    background: white;
+                    border: $smooth-border solid $border-light;
+                    border-width: 0 $smooth-border $smooth-border 0;
+                    border-radius: $smooth-border;
+                    content: ' ';
+                }
+            }
+        }
+    }
+
+    &__button {
+        position: relative;
+        text-align: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.active {
+            cursor: default;
             outline: none;
             border-left: 3px solid orange;
-            border-radius: 0;
             font-weight: $font-bold;
+
+            @include media-breakpoint-up (md) {
+                border: none;
+            }
         }
     }
 }
