@@ -45,6 +45,7 @@
     <main>
         <div class="container">
             {% include 'components/greetings.nunj'%}
+            {% include 'components/navigation.nunj'%}
         </div>
     </main>
 

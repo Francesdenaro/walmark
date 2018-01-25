@@ -1,7 +1,7 @@
 .greeting {
     $invite-height: 40px;
     $invite-btn-width:75px;
-    margin: $space-lg 0;
+    margin: $space-xl 0;
 
     @include flex (center, stretch);
     flex-direction: column;
@@ -9,6 +9,7 @@
 
     @include media-breakpoint-up (md) {
         flex-direction: row;
+        margin: $space-big 0;
     }
 
     &__box {
@@ -60,14 +61,14 @@
                 padding: 0;
             }
 
-            &__button {                
+            &__button {
                 min-height: $invite-height;
                 min-width: $invite-btn-width;
 
                 @include media-breakpoint-down (sm) {
                     position: relative;
                     left: -$space-md;
-                } 
+                }
 
                 @include media-breakpoint-up (sm) {
                     flex-grow: 1;
