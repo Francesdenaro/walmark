@@ -61,14 +61,14 @@
                 padding: 0;
             }
 
-            &__button {                
+            &__button {
                 min-height: $invite-height;
                 min-width: $invite-btn-width;
 
                 @include media-breakpoint-down (sm) {
                     position: relative;
                     left: -$space-md;
-                } 
+                }
 
                 @include media-breakpoint-up (sm) {
                     flex-grow: 1;

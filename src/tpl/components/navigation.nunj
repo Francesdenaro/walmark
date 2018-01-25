@@ -1,11 +1,11 @@
 <div class="navigation">
-    <div class="navigation__box">
-        <h4 class="h4">Health index</h4>
-    </div>
-    <div class="navigation__box">
-        <h4 class="h4">My orders</h4>
-    </div>
-    <div class="navigation__box">
-        <h4 class="h4">Profile settings</h4>
-    </div>
+    <button class="button navigation__button">
+        Health index
+    </button>
+    <button class="button navigation__button">
+        My orders
+    </button>
+    <button class="button navigation__button">
+        Profile settings
+    </button>
 </div>

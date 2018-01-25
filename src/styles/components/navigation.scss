@@ -1,21 +1,38 @@
 .navigation {
     @include flex (flex-start, stretch);
+    margin-bottom: $space-big;
     flex-direction: column;
+    width: 100vw;
+    position: absolute;
+    left: 0;
 
-    &__box {
+    /* @include media-breakpoint-up (md) {
+        flex-direction: row;
+    }
+    */
+    
+    &__button {
         padding: $space-md;
         background: $light-box-bg;
+        position: relative;
+        text-align: left;
+        font-size: $size-nav-btn;
+
+        /* @include media-breakpoint-up (md) {
+            flex-grow: 1;
+            text-align: center;
+        } */
 
         &:not(:last-child) {
             margin-bottom: $space-xs;
         }
 
-        &:before,
-        &:after {
-            position: absolute;
-            background: $light-box-bg;
-            width: 50px;
-            height: 10px;
+        &:focus,
+        &:active {
+            outline: none;
+            border-left: 3px solid orange;
+            border-radius: 0;
+            font-weight: $font-bold;
         }
     }
 }
