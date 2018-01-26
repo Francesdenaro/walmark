@@ -1,6 +1,4 @@
 .navigation {
-    $navbar-height: 60px;
-    $subnav-height: 50px;
     $subnav-btn-width: 130px;
     $arrow-size: 25px;
     position: absolute;
@@ -9,7 +7,7 @@
 
     &__bar {
         @include flex (center, stretch);
-        flex-direction: column;
+        flex-flow: column nowrap;
 
         @include media-breakpoint-up (md) {
             flex-direction: row;
@@ -25,8 +23,8 @@
 
         .main {
             &__button {
-                padding: $space-md;
-                font-size: $size-nav-btn;
+                padding: $space-lg;
+                font-size: $font-md;
                 text-align: left;
                 background: $light-box-bg;
 
@@ -37,8 +35,6 @@
                 }
 
                 @include media-breakpoint-up (md) {
-                    min-height: 60px;
-
                     &:not(:last-child) {
                         margin-right: $space-extra;
                     }
@@ -47,7 +43,7 @@
                     &.active::after {
                         @include size ($arrow-size);
                         position: absolute;
-                        z-index: 3;
+                        z-index: 2;
                         top: 100%;
                         left: 50%;
                         transform: translate(-50%, -40%) rotate(45deg);
@@ -63,31 +59,33 @@
     }
 
     &__secondary {
-        justify-content: space-between;
-        padding: 0 $space-xxl;
         border-width: 0 0 $smooth-border;
         background: white;
 
-        @include media-breakpoint-only(lg) {
-            min-height: $navbar-height;
-        }
-
         .secondary {
-            &__button {
-                padding: $space-md;
-                max-width: $subnav-btn-width;
-                font-size: $size-nav-secondary;
+            &__wrapper {
+                @include flex (center, center);
+                max-width: 768px;
 
-                @include media-breakpoint-up (lg) {
-                    max-width: none;
-                    padding: $space-lg;
+                @include media-breakpoint-up (xl) {
+                    max-width: 1200px;
+                }
+            }
+
+            &__button {
+                padding: $space-lg $space-sm;
+                font-size: $font-sm;
+                font-weight: $font-light;
+
+                @include media-breakpoint-up (xl) {
+                    padding: $space-xl $space-lg;
                 }
 
                 &:hover::after,
                 &.active::after {
                     @include size ($arrow-size);
                     position: absolute;
-                    z-index: 3;
+                    z-index: 2;
                     top: 100%;
                     left: 50%;
                     transform: translate(-50%, -40%) rotate(45deg);
@@ -96,6 +94,10 @@
                     border-width: 0 $smooth-border $smooth-border 0;
                     border-radius: $smooth-border;
                     content: ' ';
+
+                    @include media-breakpoint-up (xl) {
+                        transform: translate(-50%, -40%) rotate(45deg);
+                    }
                 }
             }
         }
@@ -104,14 +106,16 @@
     &__button {
         position: relative;
         text-align: center;
+        color: black;
 
         &:hover {
             cursor: pointer;
+            color: black;
         }
 
         &.active {
             cursor: default;
-            outline: none;
+            position: relative;
             border-left: 3px solid orange;
             font-weight: $font-bold;
 

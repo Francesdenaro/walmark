@@ -1,36 +1,38 @@
 <div class="navigation">
     <div class="navigation__bar navigation__main">
-        <button class="button navigation__button main__button">
+        <a href="#" class="button navigation__button main__button">
             Health index
-        </button>
-        <button class="button navigation__button main__button active">
+        </a>
+        <a href="#" class="button navigation__button main__button active">
             My orders
-        </button>
-        <button class="button navigation__button main__button">
+        </a>
+        <a href="#" class="button navigation__button main__button">
             Profile settings
-        </button>
+        </a>
     </div>
     <div class="navigation__bar navigation__secondary d-none d-md-flex">
-        <button class="button navigation__button secondary__button">
-            My current health index
-        </button>
-        <button class="button navigation__button secondary__button">
-            My personalised plan
-        </button>
-        <button class="button navigation__button secondary__button">
-            My personal Health Support Pack
-        </button>
-        <button class="button navigation__button secondary__button active">
-            Extra tips
-        </button>
-        <button class="button navigation__button secondary__button">
-            My comparisons
-        </button>
-        <button class="button navigation__button secondary__button">
-            My health index history
-        </button>
-        <button class="button navigation__button secondary__button">
-            Write review
-        </button>
+        <div class="secondary__wrapper">
+            <a href="#" class="button navigation__button secondary__button">
+                My current health index
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                My personalised plan
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                My personal Health Support Pack
+            </a>
+            <a href="#" class="button navigation__button secondary__button active">
+                Extra tips
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                My comparisons
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                My health index history
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Write review
+            </a>
+        </div>
     </div>
 </div>
