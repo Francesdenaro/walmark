@@ -1,12 +1,17 @@
 .navigation {
     $arrow-size: 25px;
 
-    &__bar {
+    &__container {
         @include flex (center, stretch);
         flex-flow: column nowrap;
 
         @include media-breakpoint-up (md) {
             flex-direction: row;
+        }
+    }
+
+    &__bar {
+        @include media-breakpoint-up (md) {
             border: $smooth-border solid $border-light;
             border-width: $smooth-border 0;
         }
@@ -37,17 +42,7 @@
 
                     &:hover::after,
                     &.active::after {
-                        @include size ($arrow-size);
-                        position: absolute;
-                        z-index: 2;
-                        top: 100%;
-                        left: 50%;
-                        transform: translate(-50%, -40%) rotate(45deg);
                         background: $light-box-bg;
-                        border: $smooth-border solid $border-light;
-                        border-width: 0 $smooth-border $smooth-border 0;
-                        border-radius: $smooth-border;
-                        content: ' ';
                     }
                 }
             }
@@ -59,17 +54,8 @@
         background: white;
 
         .secondary {
-            &__wrapper {
-                @include flex (center, center);
-                max-width: 768px;
-
-                @include media-breakpoint-up (xl) {
-                    max-width: 1200px;
-                }
-            }
-
             &__button {
-                padding: $space-lg $space-sm;
+                padding: $space-lg $space-md;
                 font-size: $font-sm;
                 font-weight: $font-light;
 
@@ -79,21 +65,7 @@
 
                 &:hover::after,
                 &.active::after {
-                    @include size ($arrow-size);
-                    position: absolute;
-                    z-index: 2;
-                    top: 100%;
-                    left: 50%;
-                    transform: translate(-50%, -40%) rotate(45deg);
                     background: white;
-                    border: $smooth-border solid $border-light;
-                    border-width: 0 $smooth-border $smooth-border 0;
-                    border-radius: $smooth-border;
-                    content: ' ';
-
-                    @include media-breakpoint-up (xl) {
-                        transform: translate(-50%, -40%) rotate(45deg);
-                    }
                 }
             }
         }
@@ -117,6 +89,22 @@
 
             @include media-breakpoint-up (md) {
                 border: none;
+            }
+        }
+
+        &:hover::after,
+        &.active::after {
+            @include media-breakpoint-up(md) {
+                @include size ($arrow-size);
+                position: absolute;
+                z-index: 2;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -40%) rotate(45deg);
+                border: $smooth-border solid $border-light;
+                border-width: 0 $smooth-border $smooth-border 0;
+                border-radius: $smooth-border;
+                content: ' ';
             }
         }
     }

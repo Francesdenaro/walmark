@@ -1,17 +1,19 @@
 <div class="navigation">
     <div class="navigation__bar navigation__main">
-        <a href="#" class="button navigation__button main__button">
-            Health index
-        </a>
-        <a href="#" class="button navigation__button main__button active">
-            My orders
-        </a>
-        <a href="#" class="button navigation__button main__button">
-            Profile settings
-        </a>
+        <div class="navigation__container">
+            <a href="#" class="button navigation__button main__button">
+                Health index
+            </a>
+            <a href="#" class="button navigation__button main__button active">
+                My orders
+            </a>
+            <a href="#" class="button navigation__button main__button">
+                Profile settings
+            </a>
+        </div>
     </div>
-    <div class="navigation__bar navigation__secondary d-none d-md-flex">
-        <div class="secondary__wrapper">
+    <div class="navigation__bar navigation__secondary d-none d-lg-flex">
+        <div class="container navigation__container">
             <a href="#" class="button navigation__button secondary__button">
                 My current health index
             </a>
@@ -30,7 +32,7 @@
             <a href="#" class="button navigation__button secondary__button">
                 My health index history
             </a>
-            <a href="#" class="button navigation__button secondary__button">
+            <a href="#" class="button navigation__button secondary__button d-none d-xl-block">
                 Write review
             </a>
         </div>

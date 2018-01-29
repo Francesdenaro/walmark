@@ -45,7 +45,6 @@
     <main>
             {% include 'components/greetings.nunj'%}
             {% include 'components/navigation.nunj'%}
-        </div>
     </main>
 
     {# Scripts #}
