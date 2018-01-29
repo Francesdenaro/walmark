@@ -1,9 +1,5 @@
 .navigation {
-    $subnav-btn-width: 130px;
     $arrow-size: 25px;
-    position: absolute;
-    left: 0;
-    right: 0;
 
     &__bar {
         @include flex (center, stretch);
