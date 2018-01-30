@@ -1,0 +1,111 @@
+.navigation {
+    $arrow-size: 25px;
+
+    &__container {
+        @include flex (center, stretch);
+        flex-flow: column nowrap;
+
+        @include media-breakpoint-up (md) {
+            flex-direction: row;
+        }
+    }
+
+    &__bar {
+        @include media-breakpoint-up (md) {
+            border: $smooth-border solid $border-light;
+            border-width: $smooth-border 0;
+        }
+    }
+
+    &__main {
+        @include media-breakpoint-up (md) {
+            background: $light-box-bg;
+        }
+
+        .main {
+            &__button {
+                padding: $space-lg;
+                font-size: $font-md;
+                text-align: left;
+                background: $light-box-bg;
+
+                @include media-breakpoint-down (sm) {
+                    &:not(:last-child) {
+                        margin-bottom: $space-xs;
+                    }
+                }
+
+                @include media-breakpoint-up (md) {
+                    &:not(:last-child) {
+                        margin-right: $space-extra;
+                    }
+
+                    &:hover::after,
+                    &.active::after {
+                        background: $light-box-bg;
+                    }
+                }
+            }
+        }
+    }
+
+    &__secondary {
+        border-width: 0 0 $smooth-border;
+        background: white;
+
+        .secondary {
+            &__button {
+                padding: $space-lg $space-md;
+                font-size: $font-sm;
+                font-weight: $font-light;
+
+                @include media-breakpoint-up (xl) {
+                    padding: $space-xl $space-lg;
+                }
+
+                &:hover::after,
+                &.active::after {
+                    background: white;
+                }
+            }
+        }
+    }
+
+    &__button {
+        position: relative;
+        text-align: center;
+        color: black;
+
+        &:hover {
+            cursor: pointer;
+            color: black;
+        }
+
+        &.active {
+            cursor: default;
+            position: relative;
+            border-left: 3px solid orange;
+            font-weight: $font-bold;
+
+            @include media-breakpoint-up (md) {
+                border: none;
+            }
+        }
+
+        &:hover::after,
+        &.active::after {
+            @include media-breakpoint-up(md) {
+                @include size ($arrow-size);
+                position: absolute;
+                z-index: 2;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -40%) rotate(45deg);
+                border: $smooth-border solid $border-light;
+                border-width: 0 $smooth-border $smooth-border 0;
+                border-radius: $smooth-border;
+                content: ' ';
+            }
+        }
+    }
+}

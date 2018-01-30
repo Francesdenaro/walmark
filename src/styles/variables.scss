@@ -6,18 +6,21 @@ $secondary-dark: #4d4d4d;
 $success: #009639;
 $border-light: #eee;
 $light-box-bg: #f6f6f6;
+$dark-box-bg: #c6c6c6;
 
 // Border 
 
 $smooth-border: 4px;
 
 //Space in px
-
+$space-xs: 2px;
 $space-sm: 5px;
 $space-md: 10px;
 $space-lg: 15px;
 $space-xl: 20px;
 $space-xxl: 30px;
+$space-big: 45px;
+$space-extra: 100px;
 $padding-header: 80px;
 $logo-margin-sm: 50px;
 
@@ -32,8 +35,15 @@ $icon-height-lg : 30px;
 
 $lato: 'Lato', sans-serif;
 $roboto: 'Roboto', sans-serif;
+
+//Font size
 $font-standard: 16px;
 $size-h3: 22px;
+$font-md: 18px;
+$font-sm: 14px;
+
+//Font-weight
+
 $font-light: 300;
 $font-regular: 400;
 $font-bold: 700;

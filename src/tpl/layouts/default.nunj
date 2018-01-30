@@ -43,9 +43,8 @@
     </header>
     {# Main content of the page #}
     <main>
-        <div class="container">
             {% include 'components/greetings.nunj'%}
-        </div>
+            {% include 'components/navigation.nunj'%}
     </main>
 
     {# Scripts #}
