@@ -1,18 +1,18 @@
-<div class="navigation">
+<div class="navigation js-navigation">
     <div class="navigation__bar navigation__main">
         <div class="navigation__container">
-            <a href="#" class="button navigation__button main__button">
+            <a id="js-index" href="#" class="button navigation__button main__button">
                 Health index
             </a>
-            <a href="#" class="button navigation__button main__button active">
+            <a id="js-orders" href="#" class="button navigation__button main__button active__main">
                 My orders
             </a>
-            <a href="#" class="button navigation__button main__button">
+            <a id="js-profile" href="#" class="button navigation__button main__button">
                 Profile settings
             </a>
         </div>
     </div>
-    <div class="navigation__bar navigation__secondary d-none d-lg-flex">
+    <div data-toggle='js-index' class="navigation__bar navigation__secondary">
         <div class="container navigation__container">
             <a href="#" class="button navigation__button secondary__button">
                 My current health index
@@ -23,7 +23,7 @@
             <a href="#" class="button navigation__button secondary__button">
                 My personal Health Support Pack
             </a>
-            <a href="#" class="button navigation__button secondary__button active">
+            <a href="#" class="button navigation__button secondary__button">
                 Extra tips
             </a>
             <a href="#" class="button navigation__button secondary__button">
@@ -34,6 +34,56 @@
             </a>
             <a href="#" class="button navigation__button secondary__button d-none d-xl-block">
                 Write review
+            </a>
+        </div>
+    </div>
+    <div data-toggle='js-orders' class="navigation__bar navigation__secondary active__secondary">
+        <div class="container navigation__container">
+            <a href="#" class="button navigation__button secondary__button">
+                Foo and some bar                 
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Foo and some bar                
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Foo and some bar                
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Foo and some bar                
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Foo and some bar                
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Foo and some bar                
+            </a>
+            <a href="#" class="button navigation__button secondary__button d-none d-xl-block">
+                Foo and some bar                
+            </a>
+        </div>
+    </div>
+    <div data-toggle='js-profile' class="navigation__bar navigation__secondary">
+        <div class="container navigation__container">
+            <a href="#" class="button navigation__button secondary__button">
+                Bar and again foo
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Bar and again foo
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Bar and again foo
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Bar and again foo
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Bar and again foo
+            </a>
+            <a href="#" class="button navigation__button secondary__button">
+                Bar and again foo
+            </a>
+            <a href="#" class="button navigation__button secondary__button d-none d-xl-block">
+                Bar and again foo
             </a>
         </div>
     </div>

@@ -41,7 +41,7 @@
                     }
 
                     &:hover::after,
-                    &.active::after {
+                    &.active__main::after {
                         background: $light-box-bg;
                     }
                 }
@@ -52,8 +52,10 @@
     &__secondary {
         border-width: 0 0 $smooth-border;
         background: white;
+        display: none;
 
         .secondary {
+
             &__button {
                 padding: $space-lg $space-md;
                 font-size: $font-sm;
@@ -64,7 +66,7 @@
                 }
 
                 &:hover::after,
-                &.active::after {
+                &.active__secondary::after {
                     background: white;
                 }
             }
@@ -81,19 +83,8 @@
             color: black;
         }
 
-        &.active {
-            cursor: default;
-            position: relative;
-            border-left: 3px solid orange;
-            font-weight: $font-bold;
-
-            @include media-breakpoint-up (md) {
-                border: none;
-            }
-        }
-
         &:hover::after,
-        &.active::after {
+        &.active__main::after {
             @include media-breakpoint-up(md) {
                 @include size ($arrow-size);
                 position: absolute;
@@ -106,6 +97,23 @@
                 border-radius: $smooth-border;
                 content: ' ';
             }
+        }
+    }
+
+    .active {
+        &__main {
+            cursor: default;
+            position: relative;
+            border-left: 3px solid orange;
+            font-weight: $font-bold;
+
+            @include media-breakpoint-up (md) {
+                border: none;
+            }
+        }
+
+        &__secondary {
+            display: block; 
         }
     }
 }
