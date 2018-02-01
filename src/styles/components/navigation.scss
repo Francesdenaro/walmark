@@ -17,12 +17,12 @@
         }
     }
 
-    &__main {
+    &__tabs {
         @include media-breakpoint-up (md) {
             background: $light-box-bg;
         }
 
-        .main {
+        .tabs {
             &__button {
                 padding: $space-lg;
                 font-size: $font-md;
@@ -41,8 +41,19 @@
                     }
 
                     &:hover::after,
-                    &.active__main::after {
+                    &.active::after {
                         background: $light-box-bg;
+                    }
+                }
+
+                &.active {
+                    cursor: default;
+                    position: relative;
+                    border-left: 3px solid orange;
+                    font-weight: $font-bold;
+        
+                    @include media-breakpoint-up (md) {
+                        border: none;
                     }
                 }
             }
@@ -66,10 +77,14 @@
                 }
 
                 &:hover::after,
-                &.active__secondary::after {
+                &.active::after {
                     background: white;
                 }
             }
+        }
+
+        &.active {
+            display: block; 
         }
     }
 
@@ -84,7 +99,7 @@
         }
 
         &:hover::after,
-        &.active__main::after {
+        &.active::after {
             @include media-breakpoint-up(md) {
                 @include size ($arrow-size);
                 position: absolute;
@@ -97,23 +112,6 @@
                 border-radius: $smooth-border;
                 content: ' ';
             }
-        }
-    }
-
-    .active {
-        &__main {
-            cursor: default;
-            position: relative;
-            border-left: 3px solid orange;
-            font-weight: $font-bold;
-
-            @include media-breakpoint-up (md) {
-                border: none;
-            }
-        }
-
-        &__secondary {
-            display: block; 
         }
     }
 }
