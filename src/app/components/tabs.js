@@ -1,34 +1,38 @@
 export default function tabs(container) {
-    const buttons = container.querySelectorAll('.main__button');//
-    let activeMain = container.querySelector('.active__main');//
+    const active = 'active';
+    const tabs = container.querySelectorAll('.tabs__button');
+    let tabActive = container.querySelector('.js-tabs .active');
+    const contents = [...container.querySelectorAll('.js-content')];
+    let contentActive = contents.find(content => content.classList.contains(active));
 
-    Array.from(buttons, button =>
-        button.addEventListener('click', (e) => {
+    Array.from(tabs, tab =>
+        tab.addEventListener('click', (e) => {
             e.preventDefault();
-            if (activeMain) {
-                if (button === activeMain) {
-                    toggleNavs(button, false);
+            if (tabActive) {
+                if (tab === tabActive) {
+                    toggleContent(tab, false);
                 } else {
-                    toggleNavs(activeMain, false);
-                    toggleNavs(button, true);
+                    toggleContent(tabActive, false);
+                    toggleContent(tab, true);
                 }
             } else {
-                toggleNavs(button, true);
+                toggleContent(tab, true);
             }
         })
     );
 
-    function toggleNavs(button, show) {
-        const subnav = container.querySelector(`[data-toggle=${button.id}]`);//
-
+    function toggleContent(tab, show) {
+        const contentRef = contents.find(content => content.dataset.tabsContent === tab.dataset.tabsTab);
         if (show) {
-            button.classList.add('active__main');
-            subnav.classList.add('active__secondary');//
-            activeMain = container.querySelector('.active__main');
+            tab.classList.add(active);
+            tabActive = tab;
+            contentRef.classList.add(active);
+            contentActive = contentRef;
         } else {
-            subnav.classList.remove('active__secondary');//
-            activeMain.classList.remove('active__main');
-            activeMain = container.querySelector('.active__main');
+            tabActive.classList.remove(active);
+            tabActive = null;
+            contentActive.classList.remove(active);
+            contentActive = null;
         }
     }
 }

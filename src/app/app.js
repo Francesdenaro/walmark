@@ -17,7 +17,7 @@ import PlusOne from './components/plus-one/PlusOne';
 const app = (config) => {
     init(cookieLaw, document.getElementById('cookie-law'));
     init(suffix, document.querySelector('.js-suffix'));
-    factory(tabs, document.querySelectorAll('.js-navigation'));
+    factory(tabs, document.querySelectorAll('.js-tabs'));
 
     const store = configureStore(config);
     render(Timer, document.getElementById('timer'), { from: 100 });
