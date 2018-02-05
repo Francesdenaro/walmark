@@ -17,12 +17,12 @@
         }
     }
 
-    &__main {
+    &__tabs {
         @include media-breakpoint-up (md) {
             background: $light-box-bg;
         }
 
-        .main {
+        .tabs {
             &__button {
                 padding: $space-lg;
                 font-size: $font-md;
@@ -45,6 +45,17 @@
                         background: $light-box-bg;
                     }
                 }
+
+                &.active {
+                    cursor: default;
+                    position: relative;
+                    border-left: 3px solid orange;
+                    font-weight: $font-bold;
+
+                    @include media-breakpoint-up (md) {
+                        border: none;
+                    }
+                }
             }
         }
     }
@@ -52,6 +63,7 @@
     &__secondary {
         border-width: 0 0 $smooth-border;
         background: white;
+        display: none;
 
         .secondary {
             &__button {
@@ -69,6 +81,10 @@
                 }
             }
         }
+
+        &.active {
+            display: block;
+        }
     }
 
     &__button {
@@ -79,17 +95,6 @@
         &:hover {
             cursor: pointer;
             color: black;
-        }
-
-        &.active {
-            cursor: default;
-            position: relative;
-            border-left: 3px solid orange;
-            font-weight: $font-bold;
-
-            @include media-breakpoint-up (md) {
-                border: none;
-            }
         }
 
         &:hover::after,

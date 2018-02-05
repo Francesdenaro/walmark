@@ -5,10 +5,6 @@
     border-radius: $smooth-border;
     padding: 0;
 
-    &:focus {
-        outline: none;
-    }
-
     &--success {
         color: white;
         background: $success;
