@@ -4,26 +4,26 @@ export default function tabs(container) {
     const contents = [...container.querySelectorAll('[data-tabs-content]')];
     let tabActive = tabs.find(tab => tab.classList.contains(active));
     let contentActive = contents.find(content => content.classList.contains(active));
-    
-    tabs.forEach((tab) =>
+
+    tabs.forEach((tab) => {
+        const content = contents.find(content => content.dataset.tabsContent === tab.dataset.tabsTab);
         tab.addEventListener('click', (e) => {
-            const content = contents.find(content => content.dataset.tabsContent === tab.dataset.tabsTab);
             e.preventDefault();
             if (tabActive) {
                 if (tab === tabActive) {
                     toggleContent(tab);
                 } else {
-                    toggleContent(tabActive);
-                    toggleContent(tab, content, true);
+                    toggleContent(tab);
+                    toggleContent(tab, content);
                 }
             } else {
-                toggleContent(tab, content, true);
+                toggleContent(tab, content);
             }
-        })
-    );
+        });
+    });
 
-    function toggleContent(tab, content, show) {
-        if (show) {
+    function toggleContent(tab, content) {
+        if (content) {
             tab.classList.toggle(active);
             content.classList.toggle(active);
             tabActive = tab;
