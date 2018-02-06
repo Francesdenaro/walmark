@@ -4,13 +4,16 @@ $primary: #ff6900;
 $secondary-light: #d8d8d8;
 $secondary-dark: #4d4d4d;
 $success: #009639;
+$highlight-data: #009639;
 $border-light: #eee;
 $light-box-bg: #f6f6f6;
 $dark-box-bg: #c6c6c6;
+$section-title: #4c5459;
 
 // Border 
 
 $smooth-border: 4px;
+$smooth: 4px;
 
 //Space in px
 $space-xs: 2px;
@@ -20,6 +23,8 @@ $space-lg: 15px;
 $space-xl: 20px;
 $space-xxl: 30px;
 $space-big: 45px;
+$space-bigger: 50px;
+$space-xxxl: 80px;
 $space-extra: 100px;
 $padding-header: 80px;
 $logo-margin-sm: 50px;
@@ -37,8 +42,11 @@ $lato: 'Lato', sans-serif;
 $roboto: 'Roboto', sans-serif;
 
 //Font size
+
 $font-standard: 16px;
+$size-h2: 28px;
 $size-h3: 22px;
+$size-h4: 20px;
 $font-md: 18px;
 $font-sm: 14px;
 
@@ -47,6 +55,7 @@ $font-sm: 14px;
 $font-light: 300;
 $font-regular: 400;
 $font-bold: 700;
+$font-bolder: 900;
 
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../../node_modules/bootstrap/scss/variables';

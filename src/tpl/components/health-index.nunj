@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="health-index">
+        <h2 class="h2 health-index__title">My current Health Index</h2>
+        <div class="health-index__row">
+            <div class="health-index__status health-index__wrapper">
+                <h4 class="h4 wrapper__title">Your Health Index</h4>
+                <p class="status__text">Here you can see how you stand on scale of health index.</p>
+                <div class="status__index">
+                    <div class="index__range range--low">Low</div>
+                    <div class="index__range range--md">Medium</div>  
+                    <div class="index__range range--high">High</div>  
+                    {{svg("health-index-scale",'icon-scale')}}
+                    <div class="index__value">73</div>
+                    <div class="index__pointer js-pointer">
+                        <div class="pointer__hide"></div>
+                        <div class="pointer__cursor">
+                            {{svg("icon-cursor",'')}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="health-index__improvement health-index__wrapper">
+                <div class="wrapper__list">
+                    <h4 class="h4 wrapper__title">5 Areas to Improve Your Health</h4>
+                    <p>
+                        Your Health Index is quite high. But it can be even higher! Based on your test responses, we identified several areas to work on:
+                    </p>
+                    <ul class="improvement__list">
+                        <li>Maintain a Healthy Diet and Exercise</li>
+                        <li>Be Sure Your Prescriptions Are Up to Date</li>
+                        <li>Make Relaxation a Priority</li>
+                        <li>Get Enough Sleep</li>
+                        <li>Kick Your Unhealthy Vices To The Curb</li>
+                    </ul>
+                </div>
+                <div class="improvement__message">
+                    <p class="message__text">
+                        Don't worry, we will help
+                        you get better!
+                        <div class="message__emoticon">{{svg("icon-emoticon",'')}}</div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="health-index__row">
+            <div class="health-index__weight health-index__wrapper">
+                <div class="weight__results">
+                    
+                </div>
+            </div>
+            <div class="health-index__liquid health-index__wrapper">
+            </div>
+        </div>
+    </div>
+</div>

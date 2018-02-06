@@ -1,0 +1,177 @@
+.health-index {
+    $index-value-size: 80px;
+    $status-index-width: 280px;
+    $status-index-height: 130px;
+    $hide-block: 150px;
+
+    &__title {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        border-bottom: 1px solid $secondary-light;
+        padding-bottom: $space-md;
+        margin-bottom: $space-xxl;
+    }
+
+    &__row {
+        @include flex (center, stretch);
+        flex-direction: column;
+
+        @include media-breakpoint-up (md) {
+            flex-direction: row;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: $space-xl;
+        }
+    }
+
+    &__wrapper {
+        @include flex (flex-start, stretch);
+        z-index: 1;
+        padding: $space-xl;
+        flex-direction: column;
+        border: $smooth-border solid $border-light;
+        border-radius: $smooth;
+
+        &:not(:last-child) {
+            margin-bottom: $space-xl;
+        }
+
+        .wrapper {
+            &__title {
+                color: $highlight-data;
+            }
+
+            &__list {
+                padding: $space-xl;
+            }
+        }
+    }
+
+    &__status .status {
+        &__text {
+            font-family: $lato;
+            margin: 0;
+            padding-bottom: $space-xxl;
+        }
+
+        &__index {
+            align-self: center;
+            position: relative;
+            height: $status-index-height;
+            width: $status-index-width;
+
+            .index {
+                .icon-scale {
+                    z-index: -2;
+                }
+
+                &__value {
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 1;
+                    height: $index-value-size;
+                    line-height: 1.3;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: $index-value-size;
+                    font-weight: $font-bolder;
+                    color: $success;
+                }
+
+                &__pointer {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    transform: translateY(50%) rotate(0deg);
+                    transition: 2s transform;
+
+                    .pointer {
+                        &__hide {
+                            position: absolute;
+                            bottom: 100%;
+                            z-index: -1;
+                            transform: translateY(10%);
+                            width: $status-index-width;
+                            height: $hide-block;
+                            border-radius: 100% 100% 0 0;
+                            background: rgba(255, 255, 255, .8);
+                        }
+
+                        &__cursor {
+                            z-index: 2;
+                            background: transparent;
+                            padding-left: $space-sm;
+                            width: $space-bigger;
+                            height: $space-xxl;
+                        }
+                    }
+                }
+
+                &__range {
+                    position: absolute;
+                    font-size: $font-sm;
+                    padding: $space-sm;
+                    z-index: 1;
+
+                    &.range {
+                        &--low {
+                            top: $space-xxl;
+                        }
+
+                        &--md {
+                            left: 50%;
+                            transform: translate(-50%, -100%);
+                        }
+
+                        &--high {
+                            top: $space-xxl;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__improvement {
+        padding: 0;
+
+        .improvement {
+            &__list {
+                padding-left: $space-xl;
+                font-family: $lato;
+            }
+
+            &__message {
+                position: relative;
+                padding: $space-md $space-xxxl 0 $space-xl;
+                border-radius: $smooth;
+                font-family: $lato;
+                background: $highlight-data;
+                color: white;
+
+                .message {
+                    &__text {
+                        margin: 0;
+                    }
+
+                    &__emoticon {
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translate(-50%, -60%);
+                        width: $space-xxl;
+                        height: $space-xxl;
+                        fill: $highlight-data;
+                        background: white;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
