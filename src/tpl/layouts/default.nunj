@@ -45,6 +45,7 @@
     <main>
             {% include 'components/greetings.nunj'%}
             {% include 'components/navigation.nunj'%}
+            {% include 'components/health-index.nunj'%}
     </main>
 
     {# Scripts #}

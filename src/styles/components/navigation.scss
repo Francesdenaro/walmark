@@ -1,5 +1,6 @@
 .navigation {
     $arrow-size: 25px;
+    margin-bottom: $space-big;
 
     &__container {
         @include flex (center, stretch);
@@ -83,7 +84,9 @@
         }
 
         &.active {
-            display: block;
+            @include media-breakpoint-up (md) {
+                display: block;
+            }
         }
     }
 

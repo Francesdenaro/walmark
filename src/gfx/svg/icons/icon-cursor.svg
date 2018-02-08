@@ -1,0 +1,21 @@
+<svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M36.6259384,38.9802488 C32.1634407,39.7192857 27.3780534,40.0879499 22.2697204,40.0879499 C17.1645183,40.0879499 12.6710682,39.7198051 8.78476127,38.9783693 C7.10727967,38.8653171 5.72066186,37.5307183 5.72066186,35.809665 C5.72066186,35.4442728 5.78591163,35.082318 5.91287476,34.739615 L19.6175904,-2.25259244 C20.2252103,-3.89269973 22.0561354,-4.71831891 23.7182815,-4.21018423 C24.6859464,-3.9143594 25.4724137,-3.19993614 25.8233815,-2.25259244 L39.5280971,34.739615 C40.169231,36.470184 39.1670491,38.3041327 37.4229971,38.8373068 C37.1639594,38.9164972 36.896216,38.9643817 36.6259384,38.9802488 Z" id="path-1"></path>
+        <filter x="-38.2%" y="-29.2%" width="176.5%" height="158.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.299960371 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(8.000000, 8.000000)">
+            <g id="Shape" transform="translate(22.721828, 17.864384) rotate(90.000000) translate(-22.721828, -17.864384) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use stroke="#FFFFFF" stroke-width="2" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <path d="M36.6259384,38.9802488 C32.1634407,39.7192857 27.3780534,40.0879499 22.2697204,40.0879499 C17.1645183,40.0879499 12.6710682,39.7198051 8.78476127,38.9783693 C7.10727967,38.8653171 5.72066186,37.5307183 5.72066186,35.809665 C5.72066186,35.4442728 5.78591163,35.082318 5.91287476,34.739615 L19.6175904,-2.25259244 C20.2252103,-3.89269973 22.0561354,-4.71831891 23.7182815,-4.21018423 C24.6859464,-3.9143594 25.4724137,-3.19993614 25.8233815,-2.25259244 L39.5280971,34.739615 C40.169231,36.470184 39.1670491,38.3041327 37.4229971,38.8373068 C37.1639594,38.9164972 36.896216,38.9643817 36.6259384,38.9802488 Z" id="Shape" stroke="#FFFFFF" stroke-width="4" transform="translate(22.721828, 17.864384) rotate(90.000000) translate(-22.721828, -17.864384) "></path>
+        </g>
+    </g>
+</svg>

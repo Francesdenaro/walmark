@@ -1,0 +1,307 @@
+.health-index {
+    $index-value-size: 80px;
+    $status-index-width: 280px;
+    $status-index-height: 130px;
+    $health-icon-size: 80px;
+    $hide-block: 150px;
+
+    &__title {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        border-bottom: 1px solid $secondary-light;
+        padding-bottom: $space-md;
+        margin-bottom: $space-xxl;
+    }
+
+    &__row {
+        @include flex (center, stretch);
+        flex-direction: column;
+
+        @include media-breakpoint-up (md) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: $space-xl;
+        }
+    }
+
+    &__wrapper {
+        @include flex (flex-start, stretch);
+        flex-direction: column;
+        padding: $space-xl;
+        border: $smooth-border solid $border-light;
+        border-radius: $smooth-radius;
+        overflow: hidden;
+
+        @include media-breakpoint-down (sm) {
+            &:not(:last-child) {
+                margin-bottom: $space-xl;
+            }
+        }
+
+        @include media-breakpoint-up (md) {
+            width: calc(50% - #{$space-xl});
+            margin-right: $space-xl;
+        }
+
+        .wrapper {
+            &__title {
+                color: $highlight-data;
+            }
+
+            &__list {
+                padding: $space-xl;
+            }
+        }
+
+        .icon__emoticon {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: $space-xxl;
+            height: $space-xxl;
+            border-radius: 50%;
+        }
+
+        .health__icon {
+            @include size ($health-icon-size);
+            display: inline-block;
+            fill: $health-icon;
+        }
+    }
+
+    &__status .status {
+        &__text {
+            margin: 0;
+            padding-bottom: $space-xxl;
+            font-family: $lato;
+
+            @include media-breakpoint-up (md) {
+                padding-bottom: $space-xxxl;
+            }
+        }
+
+        &__index {
+            align-self: center;
+            position: relative;
+            height: $status-index-height;
+            width: $status-index-width;
+
+            .index {
+                .icon-scale {
+                    z-index: -2;
+                }
+
+                &__value {
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 1;
+                    height: $index-value-size;
+                    line-height: 1.3;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: $index-value-size;
+                    font-weight: $font-bolder;
+                    color: $success;
+                }
+
+                &__pointer {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    transform: translateY(50%);
+                    transition: 2s transform;
+
+                    .pointer {
+                        &__hide {
+                            position: absolute;
+                            bottom: 100%;
+                            z-index: -18;
+                            transform: translateY(10%);
+                            width: $status-index-width;
+                            height: $hide-block;
+                            border-radius: 50% 50% 0 0;
+                            background: rgba(255, 255, 255, .8);
+                        }
+
+                        &__cursor {
+                            z-index: 2;
+                            background: transparent;
+                            padding-left: $space-sm;
+                            width: $space-bigger;
+                            height: $space-xxl;
+                        }
+                    }
+                }
+
+                &__range {
+                    position: absolute;
+                    font-size: $font-sm;
+                    padding: $space-sm;
+                    z-index: 1;
+
+                    &.range {
+                        &--low {
+                            top: $space-xxl;
+                        }
+
+                        &--md {
+                            left: 50%;
+                            transform: translate(-50%, -100%);
+                        }
+
+                        &--high {
+                            top: $space-xxl;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__improvement {
+        padding: 0;
+
+        .improvement {
+            &__list {
+                padding-left: $space-xl;
+                font-family: $lato;
+            }
+
+            &__message {
+                position: relative;
+                padding: $space-md $space-xxxl 0 $space-xl;
+                border-radius: $smooth-radius;
+                font-family: $lato;
+                background: $highlight-data;
+                color: white;
+
+                .message {
+                    &__text {
+                        margin: 0;
+                    }
+
+                    &__emoticon {
+                        transform: translate(-50%, -60%);
+                        fill: $highlight-data;
+                        background: white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__weight .weight {
+        &__results {
+            @include flex(flex-start, stretch);
+
+            .results {
+                &__container {
+                    @include flex(space-between, stretch);
+                    flex-direction: column;
+                }
+
+                &__title {
+                    display: block;
+                    font-size: $font-lg;
+                    font-weight: $font-light;
+                }
+
+                &__bmi {
+                    border-right: 1px solid black;
+                    padding-right: $space-lg;
+
+                    @include media-breakpoint-only (sm) {
+                        padding-left: $space-bigger;
+                    }
+
+                    @include media-breakpoint-up (md) {
+                        padding-left: $space-lg;
+                    }
+
+                    .bmi__value {
+                        font-size: $font-xxl;
+                        line-height: $font-xxl;
+                    }
+                }
+
+                &__category {
+                    margin-left: $space-lg;
+
+                    .category__value {
+                        font-size: $font-lg;
+                        line-height: $font-lg;
+                    }
+                }
+
+                &__value {
+                    font-weight: $font-bolder;
+                    color: $highlight-data;
+                }
+            }
+        }
+
+        &__details .details__text {
+            padding-left: $space-md;
+        }
+    }
+
+    &__liquid .liquid {
+        &__level {
+            position: relative;
+            padding-right: $space-xxl;
+
+            .level {
+                &__text {
+                    font-weight: $font-bolder;
+                    font-size: $font-lg;
+
+                    &--em {
+                        color: $highlight-data;
+                    }
+                }
+
+                &__emoticon {
+                    transform: translate(0%, -50%);
+                    fill: white;
+                    background: $highlight-data;
+                }
+            }
+        }
+
+        &__details .details {
+            &__icon {
+                @include size ($health-icon-size);
+                fill: $health-icon;
+            }
+
+            &__text {
+                padding-left: $space-md;
+            }
+        }
+    }
+
+    .details__comment {
+        @include flex (flex-start, center);
+        font-family: $lato;
+        padding-top: $space-md;
+
+        .details__text .text {
+            &__value {
+                font-family: $roboto;
+                font-weight: $font-bolder;
+                font-size: $font-lg;
+
+                &--big {
+                    font-size: $font-xxl;
+                }
+            }
+        }
+    }
+}
