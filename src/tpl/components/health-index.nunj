@@ -10,7 +10,7 @@
                     <div class="index__range range--md">Medium</div>  
                     <div class="index__range range--high">High</div>  
                     {{svg("health-index-scale",'icon-scale')}}
-                    <div class="index__value js-value">73</div>
+                    <div class="index__value js-value" data-value="73"></div>
                     <div class="index__pointer js-pointer">
                         <div class="pointer__hide"></div>
                         <div class="pointer__cursor">

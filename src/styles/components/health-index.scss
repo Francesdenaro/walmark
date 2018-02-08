@@ -34,7 +34,7 @@
         flex-direction: column;
         padding: $space-xl;
         border: $smooth-border solid $border-light;
-        border-radius: $smooth;
+        border-radius: $smooth-radius;
         overflow: hidden;
 
         @include media-breakpoint-down (sm) {
@@ -177,7 +177,7 @@
             &__message {
                 position: relative;
                 padding: $space-md $space-xxxl 0 $space-xl;
-                border-radius: $smooth;
+                border-radius: $smooth-radius;
                 font-family: $lato;
                 background: $highlight-data;
                 color: white;
@@ -288,7 +288,7 @@
     }
 
     .details__comment {
-        @include flex (space-between, center);
+        @include flex (flex-start, center);
         font-family: $lato;
         padding-top: $space-md;
 
