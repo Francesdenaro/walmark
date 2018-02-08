@@ -44,8 +44,8 @@
         }
 
         @include media-breakpoint-up (md) {
-            width: calc(50% - #{$space-lg});
-            margin-right: $space-lg;
+            width: calc(50% - #{$space-xl});
+            margin-right: $space-xl;
         }
 
         .wrapper {
@@ -81,7 +81,7 @@
             font-family: $lato;
 
             @include media-breakpoint-up (md) {
-                padding-bottom: $space-extra;
+                padding-bottom: $space-xxxl;
             }
         }
 
