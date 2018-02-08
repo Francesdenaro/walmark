@@ -1,20 +1,20 @@
 <div class="container">
-    <div class="health-index">
+    <div class="health-index js-health-index">
         <h2 class="h2 health-index__title">My current Health Index</h2>
         <div class="health-index__row">
             <div class="health-index__status health-index__wrapper">
                 <h4 class="h4 wrapper__title">Your Health Index</h4>
                 <p class="status__text">Here you can see how you stand on scale of health index.</p>
-                <div class="status__index">
+                <div class="status__index js-status">
                     <div class="index__range range--low">Low</div>
                     <div class="index__range range--md">Medium</div>  
                     <div class="index__range range--high">High</div>  
                     {{svg("health-index-scale",'icon-scale')}}
-                    <div class="index__value">73</div>
+                    <div class="index__value js-value">73</div>
                     <div class="index__pointer js-pointer">
                         <div class="pointer__hide"></div>
                         <div class="pointer__cursor">
-                            {{svg("icon-cursor",'')}}
+                            {{svg("icon-cursor")}}
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <p class="message__text">
                         Don't worry, we will help
                         you get better!
-                        <div class="message__emoticon">{{svg("icon-emoticon",'')}}</div>
+                        <div class="message__emoticon icon__emoticon">{{svg("icon-emoticon")}}</div>
                     </p>
                 </div>
             </div>
@@ -45,10 +45,33 @@
         <div class="health-index__row">
             <div class="health-index__weight health-index__wrapper">
                 <div class="weight__results">
-                    
+                    <div class="details__icon icon__hips d-none d-sm-inline-block">{{svg("icon-hips")}}</div>
+                    <div class="results__bmi results__container">
+                        <span class="results__title">BMI</span>
+                        <span class="bmi__value results__value">20.1</span>
+                    </div>
+                    <div class="results__category results__container">
+                        <span class="results__title">Category</span>
+                        <span class="category__value results__value">Normal weight</span>
+                    </div>
+                </div>
+                <div class="weight__details details__comment">
+                    <div class="details__icon d-sm-none">{{svg("icon-hips")}}</div>
+                    <span class="details__text">Normal BMI is 20-25. Your weight to height ratio is ideal.</span>
                 </div>
             </div>
             <div class="health-index__liquid health-index__wrapper">
+                <div class="liquid__level">
+                    <span class="level__text">Your daily liquid intake is <span class="level__text--em">insufficient</span></span>
+                    <div class="level__emoticon icon__emoticon">{{svg("icon-emoticon")}}</div>
+                </div>
+                <div class="liquid__details details__comment">
+                    <div class="details__icon">{{svg("icon-drink")}}</div>
+                    <div class="details__text">
+                        <div class="text__value"><span class="text__value--big">2.5</span> Litres</div> 
+                        <span class="text__comment">Is optimal fluid intake for your height and weight</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
