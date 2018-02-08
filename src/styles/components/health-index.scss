@@ -31,8 +31,8 @@
 
     &__wrapper {
         @include flex (flex-start, stretch);
-        padding: $space-xl;
         flex-direction: column;
+        padding: $space-xl;
         border: $smooth-border solid $border-light;
         border-radius: $smooth;
         overflow: hidden;
@@ -41,6 +41,11 @@
             &:not(:last-child) {
                 margin-bottom: $space-xl;
             }
+        }
+        
+        @include media-breakpoint-up (md) {
+            width: calc(50% - #{$space-lg});
+            margin-right: $space-lg;
         }
 
         .wrapper {
@@ -61,6 +66,13 @@
             height: $space-xxl;
             border-radius: 50%;
         }
+
+        
+        .health__icon {
+            @include size ($health-icon-size);
+            display: inline-block;
+            fill: $health-icon;
+        }
     }
 
     &__status .status {
@@ -68,6 +80,10 @@
             margin: 0;
             padding-bottom: $space-xxl;
             font-family: $lato;
+
+            @include media-breakpoint-up (md) {
+                padding-bottom: $space-extra;
+            }
         }
 
         &__index {
@@ -190,18 +206,27 @@
                 &__container {
                     @include flex(space-between, stretch);
                     flex-direction: column;
-                }
 
+                }
+                
                 &__title {
                     display: block;
                     font-size: $font-lg;
                     font-weight: $font-light;
                 }
-
+                
                 &__bmi {
                     border-right: 1px solid black;
                     padding-right: $space-lg;
 
+                    @include media-breakpoint-only (sm) {
+                        padding-left: $space-bigger;
+                    }
+
+                    @include media-breakpoint-up (md) {
+                        padding-left: $space-lg;
+                    }
+                    
                     .bmi__value {
                         font-size: $font-xxl;
                         line-height: $font-xxl;
@@ -224,16 +249,10 @@
             }
         }
 
-        &__details .details {
-            &__icon {
-                @include size ($health-icon-size);
-                display: inline-block;
-                fill: $health-icon;
-            }
+        
 
-            &__text {
-                padding-left: $space-md;
-            }
+        &__details .details__text {
+            padding-left: $space-md;
         }
     }
 
@@ -263,7 +282,6 @@
         &__details .details {
             &__icon {
                 @include size ($health-icon-size);
-                flex-grow: 2;
                 fill: $health-icon;
             }
 
