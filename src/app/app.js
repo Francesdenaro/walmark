@@ -6,6 +6,7 @@ import 'babel-polyfill';
 import 'svgxuse';
 import init from './init';
 import factory from './factory';
+import helpers from './helpers';
 import { render, renderFactory } from './render';
 import configureStore from './store/configureStore';
 import cookieLaw from './components/cookie-law';
