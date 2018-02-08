@@ -42,7 +42,7 @@
                 margin-bottom: $space-xl;
             }
         }
-        
+
         @include media-breakpoint-up (md) {
             width: calc(50% - #{$space-lg});
             margin-right: $space-lg;
@@ -67,7 +67,6 @@
             border-radius: 50%;
         }
 
-        
         .health__icon {
             @include size ($health-icon-size);
             display: inline-block;
@@ -206,15 +205,14 @@
                 &__container {
                     @include flex(space-between, stretch);
                     flex-direction: column;
-
                 }
-                
+
                 &__title {
                     display: block;
                     font-size: $font-lg;
                     font-weight: $font-light;
                 }
-                
+
                 &__bmi {
                     border-right: 1px solid black;
                     padding-right: $space-lg;
@@ -226,7 +224,7 @@
                     @include media-breakpoint-up (md) {
                         padding-left: $space-lg;
                     }
-                    
+
                     .bmi__value {
                         font-size: $font-xxl;
                         line-height: $font-xxl;
@@ -248,8 +246,6 @@
                 }
             }
         }
-
-        
 
         &__details .details__text {
             padding-left: $space-md;
