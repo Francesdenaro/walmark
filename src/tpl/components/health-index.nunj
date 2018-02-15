@@ -1,6 +1,6 @@
 <div class="container">
     <div class="health-index js-health-index">
-        <h2 class="h2 health-index__title">My current Health Index</h2>
+        <h2 class="h2 section__title">My current Health Index</h2>
         <div class="health-index__row">
             <div class="health-index__status health-index__wrapper">
                 <h4 class="h4 wrapper__title">Your Health Index</h4>
