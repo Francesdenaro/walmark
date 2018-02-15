@@ -4,16 +4,7 @@
     $status-index-height: 130px;
     $health-icon-size: 80px;
     $hide-block: 150px;
-
-    &__title {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        display: inline-block;
-        border-bottom: 1px solid $secondary-light;
-        padding-bottom: $space-md;
-        margin-bottom: $space-xxl;
-    }
+    margin-bottom: $space-big;
 
     &__row {
         @include flex (center, stretch);

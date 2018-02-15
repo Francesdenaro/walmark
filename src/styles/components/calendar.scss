@@ -1,0 +1,328 @@
+.calendar {
+    $arrow-fill: #7e7e7e;
+    $calendar-shadow: #ffd94b;
+    $loading-color: linear-gradient(180deg, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .5) 100%), linear-gradient(228.04deg, #33ae90 0%, #e39a21 100%);
+    $success-box: #ace0c4;
+    $inactive-box: #ffdf87;
+    $logo-size: 60px;
+    $logo-size-big: 80px;
+    $print-icon-size: 20px;
+    $arrow-icon-size: 20px;
+    $arrows-icon-size: 30px;
+    $box-icon-size: 25px;
+    $loading-width: 300px;
+    $loading-width-sm: 200px;
+    $box-size: 60px;
+    $box-size-md: 440px;
+    $box-size-lg: 660px;
+    $box-size-circle: 100px;
+    $small-toggler: 35px;
+    margin-bottom: 100px;////////////////////////////////////////////////
+
+    .wrapper__calendar {
+        position: relative;
+        border: 1px solid $secondary-light;
+        border-radius: $smooth-border;
+        box-shadow: 0 0 $smooth-border $smooth-border $calendar-shadow;
+
+        .calendar {
+            &__item {
+                padding: $space-xxl $space-lg $space-lg;
+            }
+
+            &__header {
+                @include flex (center, center);
+
+                @include media-breakpoint-up (md) {
+                    justify-content: space-around;
+                }
+
+                .header {
+                    &__info {
+                        @include flex (flex-start, center);
+                        padding-bottom: $space-lg;
+
+                        .info {
+                            &__logo {
+                                @include size ($logo-size);
+
+                                @include media-breakpoint-up (sm) {
+                                    @include size ($logo-size-big);
+                                }
+                            }
+
+                            &__time {
+                                flex-shrink: 10;
+                                padding-left: $space-lg;
+
+                                .time__comment {
+                                    font-size: $font-sm;
+                                }
+                            }
+                        }
+                    }
+
+                    &__loading {
+                        width: 100%;
+                        height: $space-md;
+                        border-radius: $smooth-radius;
+                        background: $secondary-light;
+                        margin-top: $space-md;
+
+                        &--full {
+                            height: inherit;
+                            border-radius: inherit;
+                            background: $loading-color;
+                            width: 30%;
+                        }
+                    }
+
+                    &__print .print__btn {
+                        @include flex (space-between, center);
+                        padding: $space-xs $space-xxl;
+
+                        .print__icon {
+                            @include size ($print-icon-size);
+                            display: inline-block;
+                            margin-right: $space-sm;
+                            fill: $success;
+                        }
+                    }
+                }
+            }
+
+            &__pagination {
+                @include flex (space-around, center);
+                background: $light-box-bg;
+                padding-left: $space-sm;
+                padding-right: $space-sm;
+
+                .pagination {
+                    &__wrap {
+                        @include flex (flex-start, center);
+                    }
+
+                    &__arrow {
+                        @include size ($arrow-icon-size);
+                        fill: $arrow-fill;
+                        border: 1px solid $arrow-fill;
+                        border-radius: 50%;
+                        padding: 0 $space-xs;
+
+                        &--left {
+                            margin-right: $space-sm;
+                            transform: rotate(180deg);
+                        }
+
+                        &--right {
+                            margin-left: $space-sm;
+                        }
+                    }
+                }
+            }
+
+            &__week {
+                flex-shrink: 0;
+                color: $highlight-data;
+            }
+
+            &__days {
+                @include flex (space-between, flex-start);
+                flex-direction: column;
+
+                @include media-breakpoint-up (xl) {
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                .days__day {
+                    @include flex (space-between, flex-start);
+                    position: relative;
+                    flex-direction: column;
+                    width: 100%;
+
+                    @include media-breakpoint-down (lg) {
+                        &:not(:last-child) {
+                            margin: 0 0 $space-xl;
+                        }
+                    }
+
+                    @include media-breakpoint-up (md) {
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        align-items: center;
+                    }
+
+                    @include media-breakpoint-up (xl) {
+                        flex-direction: column;
+                    }
+
+                    .day {
+                        &__name {
+                            text-transform: capitalize;
+                            color: $success;
+
+                            @include media-breakpoint-down (sm) {
+                                margin-bottom: $space-md;
+                            }
+                        }
+
+                        &__box {
+                            position: relative;
+                            width: 100%;
+                            height: $box-size;
+                            margin: 0;
+                            border: $smooth-border solid $border-light;
+                            border-radius: $smooth-radius;
+                            background: $light-box-bg;
+                            transition: background .5s;
+
+                            &.active {
+                                border: none;
+                                background: $success-box;
+                            }
+
+                            &.inactive {
+                                border: none;
+                                background: $inactive-box;
+                            }
+
+                            @include media-breakpoint-up (md) {
+                                width: $box-size-md;
+                                margin: 0 $space-lg;
+                            }
+
+                            @include media-breakpoint-up (lg) {
+                                width: $box-size-lg;
+                            }
+
+                            @include media-breakpoint-up (xl) {
+                                @include size ($box-size-circle);
+                                border-radius: 50%;
+                            }
+
+                            .box__icon {
+                                @include size ($box-icon-size);
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+
+                                &--tick {
+                                    fill: $success;
+                                }
+
+                                &--cross {
+                                    fill: $danger;
+                                }
+                            }
+                        }
+
+                        &__toggle {
+                            position: relative;
+                            bottom: $space-sm;
+                            width: inherit;
+
+                            @include media-breakpoint-up (md) {
+                                width: auto;
+                                width: initial;
+                                padding: $space-sm $space-xl;
+                            }
+
+                            @include media-breakpoint-up (xl) {
+                                @include size ($small-toggler);
+                                position: absolute;
+                                bottom: 0;
+                                right: $space-lg;
+                                padding: 0;
+                                border: $smooth-border solid white;
+                                border-radius: 50%;
+                                background: $decline;
+                            }
+
+                            .toggle__icon {
+                                height: $arrows-icon-size;
+                                padding: $space-xs $space-xs $space-xs 0;
+                                transform: rotate(90deg);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__actions {
+                @include flex (space-between, stretch);
+                padding: $space-lg;
+                flex-direction: column;
+
+                @include media-breakpoint-up (md) {
+                    flex-direction: row;
+                    align-items: flex-end;
+                }
+
+                .actions__action {
+                    @include media-breakpoint-down (sm) {
+                        &:not(:last-child) {
+                            margin-bottom: $space-lg;
+                        }
+                    }
+
+                    .action {
+                        &__group {
+                            flex-grow: 1;
+                            padding-right: $space-lg;
+                            margin: 0;
+
+                            @include media-breakpoint-up (sm) {
+                                padding-right: $space-md;
+                            }
+                        }
+
+                        &__form {
+                            @include flex(space-between, flex-end);
+                            flex-wrap: nowrap;
+
+                            @include media-breakpoint-down (md) {
+                                &:not(:last-child) {
+                                    margin-bottom: $space-md;
+                                }
+                            }
+                        }
+
+                        &__label {
+                            padding: $space-sm;
+
+                            .label__help {
+                                @include size ($icon-height-md);
+                                position: relative;
+                                left: $space-sm;
+                                top: $space-sm;
+                                display: inline-block;
+                                border-radius: 50%;
+                                background: $secondary-light;
+
+                                .help__img {
+                                    @include size ($icon-height-md);
+                                    fill: black;
+                                    padding: $space-sm;
+                                }
+                            }
+                        }
+
+                        &__reset {
+                            flex-wrap: wrap;
+
+                            .reset__submit {
+                                width: 100%;
+                            }
+                        }
+
+                        &__submit {
+                            padding: $space-sm $space-xl;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
