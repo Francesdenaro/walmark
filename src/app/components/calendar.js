@@ -1,31 +1,27 @@
 import axios from 'axios';
 
 export default function (container) {
+    const active = 'active';
     const boxes = [...container.querySelectorAll('.js-box')];
-    const toggleBoxes = [...container.querySelectorAll('.js-toggler')];
-    const toggleTexts = [...container.querySelectorAll('.js-toggler-text')];
     const boxIcons = [...container.querySelectorAll('.js-icon-box')];
-    const reminderBtn = container.querySelector('.js-reminder-submit');
-    const reminder = container.querySelector('.js-reminder');
+    const cross = 'js-cross';
+    const hide = 'd-none';
+    const inactive = 'inactive';
+    const buttonTextArray = [...container.querySelectorAll('.js-text-btn')];
     const mailTimeBtn = container.querySelector('.js-mail-time-submit');
     const mailTime = container.querySelector('.js-mail-time');
+    const reminder = container.querySelector('.js-reminder');
+    const reminderBtn = container.querySelector('.js-reminder-submit');
     const resetBtn = container.querySelector('.js-reset-submit');
-    const active = 'active';
-    const inactive = 'inactive';
-    const hide = 'v-hide';
+    const tick = 'js-tick';
+    const toggleBoxes = [...container.querySelectorAll('.js-toggler')];
+    const toggleTexts = [...container.querySelectorAll('.js-toggler-text')];
 
     toggleBoxes.forEach((toggler) => {
         const box = boxes.find(box => box.dataset.dayBox === toggler.dataset.dayBtn);
-        const innerText = toggleTexts.find(text => text.dataset.dayText === toggler.dataset.dayBtn);
         toggler.addEventListener('click', () => {
             boxToggle(box);
-            postRequest(String(box.dataset.dayBox), String(box.classList.contains(active)));
-
-            if (box.classList.contains(active)) {
-                innerText.innerHTML = 'Unmark';
-            } else if (box.classList.contains(inactive)) {
-                innerText.innerHTML = 'Remark';
-            }
+            postRequest(box.dataset.dayBox, box.classList.contains(active));
         });
     });
 
@@ -44,16 +40,27 @@ export default function (container) {
     });
 
     function boxToggle(box) {
-        const innerTick = boxIcons.find(icon => icon.dataset.dayIcon === box.dataset.dayBox && icon.classList.contains('js-tick'));
-        const innerCross = boxIcons.find(icon => icon.dataset.dayIcon === box.dataset.dayBox && icon.classList.contains('js-cross'));
-        if (!box.classList.contains(active) && !box.classList.contains(inactive)) {
-            box.classList.toggle(active);
+        const boxClass = box.classList;
+        const boxDataBox = box.dataset.dayBox;
+        const buttonText = buttonTextArray.find(text => text.dataset.dayText === boxDataBox);
+        const innerTick = boxIcons.find(icon => icon.dataset.dayIcon === boxDataBox && icon.classList.contains(tick));
+        const innerCross = boxIcons.find(icon => icon.dataset.dayIcon === boxDataBox && icon.classList.contains(cross));
+
+        if (!boxClass.contains(active) && !boxClass.contains(inactive)) {
+            boxClass.toggle(active);
             innerTick.classList.toggle(hide);
+            if (buttonText) buttonText.innerHTML = buttonText.dataset.dayTextActive;
         } else {
-            box.classList.toggle(active);
+            boxClass.toggle(active);
             innerTick.classList.toggle(hide);
-            box.classList.toggle(inactive);
+            boxClass.toggle(inactive);
             innerCross.classList.toggle(hide);
+
+            if (buttonText) {
+                boxClass.contains(active) ?
+                    buttonText.innerHTML = buttonText.dataset.dayTextActive :
+                    buttonText.innerHTML = buttonText.dataset.dayTextInactive;
+            }
         }
     }
 
