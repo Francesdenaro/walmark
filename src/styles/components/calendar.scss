@@ -1,9 +1,4 @@
 .calendar {
-    $arrow-fill: #7e7e7e;
-    $calendar-shadow: #ffd94b;
-    $loading-color: linear-gradient(180deg, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .5) 100%), linear-gradient(228.04deg, #33ae90 0%, #e39a21 100%);
-    $success-box: #ace0c4;
-    $inactive-box: #ffdf87;
     $logo-size: 60px;
     $logo-size-big: 80px;
     $print-icon-size: 20px;
@@ -17,7 +12,6 @@
     $box-size-lg: 660px;
     $box-size-circle: 100px;
     $small-toggler: 35px;
-    margin-bottom: 100px;////////////////////////////////////////////////
 
     .wrapper__calendar {
         position: relative;
@@ -104,8 +98,8 @@
 
                     &__arrow {
                         @include size ($arrow-icon-size);
-                        fill: $arrow-fill;
-                        border: 1px solid $arrow-fill;
+                        fill: $secondary-medium;
+                        border: 1px solid $secondary-medium;
                         border-radius: 50%;
                         padding: 0 $space-xs;
 

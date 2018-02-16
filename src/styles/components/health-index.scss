@@ -61,7 +61,7 @@
         .health__icon {
             @include size ($health-icon-size);
             display: inline-block;
-            fill: $health-icon;
+            fill: $secondary-medium;
         }
     }
 
@@ -269,7 +269,7 @@
         &__details .details {
             &__icon {
                 @include size ($health-icon-size);
-                fill: $health-icon;
+                fill: $secondary-medium;
             }
 
             &__text {

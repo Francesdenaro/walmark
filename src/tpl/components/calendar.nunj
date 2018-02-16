@@ -35,8 +35,13 @@
                 {% for day in days %}
                     <div class="days__day js-{{day}}">
                         <span class="day__name">{{day}}</span>
-                        <div data-day-box="first{{day}}" class="day__box js-box"><div data-day-icon="first{{day}}" class="box__icon box__icon--tick v-hide js-icon-box js-tick">{{svg('icon-tick')}}</div><div data-day-icon="first{{day}}" class="box__icon box__icon--cross v-hide js-icon-box js-cross">{{svg('icon-cross')}}</div></div>  
-                        <button data-day-btn="first{{day}}" class="button button--success-invert day__toggle js-toggler"><span data-day-text="first{{day}}" class="js-toggler-text d-xl-none">Mark</span><div class="toggle__icon d-none d-xl-block">{{svg("icon-arrows-circle")}}</div></button>
+                        <div data-day-box="first{{day}}" class="day__box js-box"><div data-day-icon="first{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">{{svg('icon-tick')}}</div><div data-day-icon="first{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">{{svg('icon-cross')}}</div></div>  
+                        <button data-day-btn="first{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <span data-day-text="first{{day}}" data-day-text-active="Unmark" data-day-text-inactive="Remark" class="d-xl-none js-text-btn">Mark</span>
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
                     </div>
                 {% endfor %}
             </div>
@@ -46,8 +51,19 @@
                 {% set days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] %}
                 {% for day in days %}
                     <div class="days__day js-{{day}}">
-                        <div data-day-box="second{{day}}" class="day__box js-box"><div data-day-icon="second{{day}}" class="box__icon box__icon--tick v-hide js-icon-box js-tick">{{svg('icon-tick')}}</div><div data-day-icon="second{{day}}" class="box__icon box__icon--cross v-hide js-icon-box js-cross">{{svg('icon-cross')}}</div></div>  
-                        <button data-day-btn="second{{day}}" class="button button--success-invert day__toggle js-toggler"><div class="toggle__icon d-none d-xl-block">{{svg("icon-arrows-circle")}}</div></button>
+                        <div data-day-box="second{{day}}" class="day__box js-box">
+                            <div data-day-icon="second{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">
+                                {{svg('icon-tick')}}
+                            </div>
+                            <div data-day-icon="second{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">
+                                {{svg('icon-cross')}}
+                            </div>
+                        </div>  
+                        <button data-day-btn="second{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
                     </div>
                 {% endfor %}
             </div>
@@ -57,8 +73,19 @@
                 {% set days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] %}
                 {% for day in days %}
                     <div class="days__day js-{{day}}">
-                        <div data-day-box="third{{day}}" class="day__box js-box"><div data-day-icon="third{{day}}" class="box__icon box__icon--tick v-hide js-icon-box js-tick">{{svg('icon-tick')}}</div><div data-day-icon="third{{day}}" class="box__icon box__icon--cross v-hide js-icon-box js-cross">{{svg('icon-cross')}}</div></div>  
-                        <button data-day-btn="third{{day}}" class="button button--success-invert day__toggle js-toggler"><div class="toggle__icon d-none d-xl-block">{{svg("icon-arrows-circle")}}</div></button>
+                        <div data-day-box="third{{day}}" class="day__box js-box">
+                            <div data-day-icon="third{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">
+                                {{svg('icon-tick')}}
+                            </div>
+                            <div data-day-icon="third{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">
+                                {{svg('icon-cross')}}
+                            </div>
+                        </div>  
+                        <button data-day-btn="third{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
                     </div>
                 {% endfor %}
             </div>
@@ -68,8 +95,19 @@
                 {% set days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] %}
                 {% for day in days %}
                     <div class="days__day js-{{day}}">
-                        <div data-day-box="fourth{{day}}" class="day__box js-box"><div data-day-icon="fourth{{day}}" class="box__icon box__icon--tick v-hide js-icon-box js-tick">{{svg('icon-tick')}}</div><div data-day-icon="fourth{{day}}" class="box__icon box__icon--cross v-hide js-icon-box js-cross">{{svg('icon-cross')}}</div></div>  
-                        <button data-day-btn="fourth{{day}}" class="button button--success-invert day__toggle js-toggler"><div class="toggle__icon d-none d-xl-block">{{svg("icon-arrows-circle")}}</div></button>
+                        <div data-day-box="fourth{{day}}" class="day__box js-box">
+                            <div data-day-icon="fourth{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">
+                                {{svg('icon-tick')}}
+                            </div>
+                            <div data-day-icon="fourth{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">
+                                {{svg('icon-cross')}}
+                            </div>
+                        </div>  
+                        <button data-day-btn="fourth{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
                     </div>
                 {% endfor %}
             </div>
@@ -79,8 +117,19 @@
                 {% set days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] %}
                 {% for day in days %}
                     <div class="days__day js-{{day}}">
-                        <div data-day-box="fifth{{day}}" class="day__box js-box"><div data-day-icon="fifth{{day}}" class="box__icon box__icon--tick v-hide js-icon-box js-tick">{{svg('icon-tick')}}</div><div data-day-icon="fifth{{day}}" class="box__icon box__icon--cross v-hide js-icon-box js-cross">{{svg('icon-cross')}}</div></div>  
-                        <button data-day-btn="fifth{{day}}" class="button button--success-invert day__toggle js-toggler"><div class="toggle__icon d-none d-xl-block">{{svg("icon-arrows-circle")}}</div></button>
+                        <div data-day-box="fifth{{day}}" class="day__box js-box">
+                            <div data-day-icon="fifth{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">
+                                {{svg('icon-tick')}}
+                            </div>
+                            <div data-day-icon="fifth{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">
+                                {{svg('icon-cross')}}
+                            </div>
+                        </div>  
+                        <button data-day-btn="fifth{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
                     </div>
                 {% endfor %}
             </div>
