@@ -138,20 +138,20 @@
                     <div class="action__label">Set reminders <button class="button label__help">{{svg('icon-questionmark', 'help__img')}}</button></div>
                     <form class="action__form action__reminder">
                         <div class="form-group action__group">
-                            <select class="form-control js-reminder">
+                            <select data-action-name="reminder" class="form-control js-reminder">
                                 <option value="3">Every 3 days</option>
                                 <option value="7">Every 7 days</option>
                                 <option value="14">Every 14 days</option>
                             </select>
                         </div>
-                        <button type="button" class="button button--success-invert action__submit js-reminder-submit">Set</button>
+                        <button data-action-btn="reminder" data-action-method="post" type="button" class="button button--success-invert action__submit js-submit js-reminder-submit">Set</button>
                     </form>
                 </div>
                 <div class="actions__action">
                     <div class="action__label">Prefered time to receive email</div>
                     <form class="action__form action__mail">
                         <div class="form-group action__group">
-                            <select name="mail" class="form-control  js-mail-time">
+                            <select data-action-name="mailTime" class="form-control js-mail-time">
                                 <option value="9">9:00</option>
                                 <option value="10">10:00</option>
                                 <option value="11">11:00</option>
@@ -159,15 +159,13 @@
                                 <option value="13">13:00</option>
                             </select>
                         </div>
-                        <button type="button" class="button button--success-invert action__submit js-mail-time-submit">Set</button>
+                        <button data-action-btn="mailTime" type="button" data-action-method="post" class="button button--success-invert action__submit js-submit js-mail-time-submit">Set</button>
                     </form>
                 </div>
                 <div class="actions__action">
                     <div class="action__label">You missed more task?<button class="button label__help">{{svg('icon-questionmark', 'help__img')}}</button></div>
-                    <form class="action__form action__reset">
-                        <div class="form-group action__group">
-                        </div>
-                        <button type="button" class="button button--success-invert action__submit reset__submit js-reset-submit">Reset my plan</button>
+                    <form data-action-name="reset" class="action__form action__reset">
+                        <button type="button" data-action-btn="reset" data-action-method="post" class="button button--success-invert action__submit reset__submit js-submit js-reset-submit">Reset my plan</button>
                     </form>
                 </div>
             </div>

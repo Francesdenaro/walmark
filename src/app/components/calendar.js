@@ -1,78 +1,85 @@
 import axios from 'axios';
 
 export default function (container) {
-    const active = 'active';
+    const actionItems = [...container.querySelectorAll('[data-action-name]')];
+    const actionSubmits = [...container.querySelectorAll('[data-action-btn]')];
+    const activeClass = 'active';
     const boxes = [...container.querySelectorAll('.js-box')];
     const boxIcons = [...container.querySelectorAll('.js-icon-box')];
-    const cross = 'js-cross';
-    const hide = 'd-none';
-    const inactive = 'inactive';
+    const crossClass = 'js-cross';
+    const hiddenClass = 'd-none';
+    const inactiveClass = 'inactive';
     const buttonTextArray = [...container.querySelectorAll('.js-text-btn')];
     const mailTimeBtn = container.querySelector('.js-mail-time-submit');
     const mailTime = container.querySelector('.js-mail-time');
     const reminder = container.querySelector('.js-reminder');
     const reminderBtn = container.querySelector('.js-reminder-submit');
     const resetBtn = container.querySelector('.js-reset-submit');
-    const tick = 'js-tick';
+    const tickClass = 'js-tick';
     const toggleBoxes = [...container.querySelectorAll('.js-toggler')];
     const toggleTexts = [...container.querySelectorAll('.js-toggler-text')];
 
     toggleBoxes.forEach((toggler) => {
         const box = boxes.find(box => box.dataset.dayBox === toggler.dataset.dayBtn);
+        const requestMethod = 'post';
         toggler.addEventListener('click', () => {
             boxToggle(box);
-            postRequest(box.dataset.dayBox, box.classList.contains(active));
+            makeRequest(requestMethod, box.dataset.dayBox, box.classList.contains(activeClass));
         });
     });
 
-    reminderBtn.addEventListener('click', () => {
-        const reminderValue = reminder.value;
-        postRequest('reminder', reminderValue);
-    });
+    actionSubmits.forEach((button) => {
+        const relatedAction = actionItems.find(action => action.dataset.actionName === button.dataset.actionBtn);
+        const relatedActionName = relatedAction.dataset.actionName;
+        const requestMethod = button.dataset.actionMethod;
 
-    mailTimeBtn.addEventListener('click', () => {
-        const mailTimeValue = mailTime.value;
-        postRequest('mailTime', mailTimeValue);
-    });
-
-    resetBtn.addEventListener('click', () => {
-        postRequest('reset', true);
+        button.addEventListener('click', () => {
+            if (relatedActionName === 'reset') {
+                makeRequest(requestMethod, relatedActionName, true);
+            } else {
+                makeRequest(requestMethod, relatedActionName, relatedAction.value);
+            }
+        });
     });
 
     function boxToggle(box) {
-        const boxClass = box.classList;
-        const boxDataBox = box.dataset.dayBox;
-        const buttonText = buttonTextArray.find(text => text.dataset.dayText === boxDataBox);
-        const innerTick = boxIcons.find(icon => icon.dataset.dayIcon === boxDataBox && icon.classList.contains(tick));
-        const innerCross = boxIcons.find(icon => icon.dataset.dayIcon === boxDataBox && icon.classList.contains(cross));
+        const boxClassList = box.classList;
+        const dayBox = box.dataset.dayBox;
+        const buttonText = buttonTextArray.find(text => text.dataset.dayText === dayBox);
+        const innerTick = boxIcons.find(icon => icon.dataset.dayIcon === dayBox && icon.classList.contains(tickClass));
+        const innerCross = boxIcons.find(icon => icon.dataset.dayIcon === dayBox && icon.classList.contains(crossClass));
 
-        if (!boxClass.contains(active) && !boxClass.contains(inactive)) {
-            boxClass.toggle(active);
-            innerTick.classList.toggle(hide);
+        if (!boxClassList.contains(activeClass) && !boxClassList.contains(inactiveClass)) {
+            boxClassList.toggle(activeClass);
+            innerTick.classList.toggle(hiddenClass);
             if (buttonText) buttonText.innerHTML = buttonText.dataset.dayTextActive;
         } else {
-            boxClass.toggle(active);
-            innerTick.classList.toggle(hide);
-            boxClass.toggle(inactive);
-            innerCross.classList.toggle(hide);
+            boxClassList.toggle(activeClass);
+            innerTick.classList.toggle(hiddenClass);
+            boxClassList.toggle(inactiveClass);
+            innerCross.classList.toggle(hiddenClass);
 
             if (buttonText) {
-                boxClass.contains(active) ?
+                boxClassList.contains(activeClass) ?
                     buttonText.innerHTML = buttonText.dataset.dayTextActive :
-                    buttonText.innerHTML = buttonText.dataset.dayTextInactive;
+                    buttonText.innerHTML = buttonText.dataset.dayTextInactiveClass;
             }
         }
     }
 
-    function postRequest (valueName, value) {
-        axios.post('', {
-            [valueName]: value
-        })
-            .then((response) => {
-                console.log(response);
+    function makeRequest(method, valueName, value) {
+        try {
+            axios[method]('', {
+                [valueName]: value
             })
-            .catch((error) => {
-                console.log(error);
-            });
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
