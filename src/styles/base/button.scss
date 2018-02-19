@@ -6,8 +6,14 @@
     padding: 0;
 
     &--success {
+        padding: $space-sm $space-md;
         color: white;
         background: $success;
-        padding: $space-sm $space-md;
+        
+        &-invert {
+            border: 1px solid $success;
+            color: $success;
+            background: white;
+        }   
     }
 }

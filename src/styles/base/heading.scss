@@ -5,6 +5,16 @@
     text-align: center;
 }
 
+.section__title {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    border-bottom: 1px solid $secondary-light;
+    padding-bottom: $space-md;
+    margin-bottom: $space-xxl;
+}
+
 .h3 {
     font-size: $size-h3;
     font-weight: $font-bold;

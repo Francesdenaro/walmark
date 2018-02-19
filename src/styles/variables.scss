@@ -2,15 +2,20 @@
 
 $primary: #ff6900;
 $secondary-light: #d8d8d8;
+$secondary-medium: #7e7e7e;
 $secondary-dark: #4d4d4d;
 $success: #009639;
 $highlight-data: #009639;
+$decline: #ff6712;
+$danger: #ed2a32;
 $border-light: #eee;
 $light-box-bg: #f6f6f6;
 $dark-box-bg: #c6c6c6;
 $section-title: #4c5459;
-$health-icon: #7e7e7e;
-
+$calendar-shadow: #ffd94b;
+$loading-color: linear-gradient(180deg, rgba(255, 255, 255, .5) 0%, rgba(0, 0, 0, .5) 100%), linear-gradient(228.04deg, #33ae90 0%, #e39a21 100%);
+$success-box: #ace0c4;
+$inactive-box: #ffdf87;
 // Border 
 
 $smooth-border: 4px;
@@ -48,10 +53,10 @@ $font-standard: 16px;
 $size-h2: 28px;
 $size-h3: 22px;
 $size-h4: 20px;
-$font-xxl: 32px;
-$font-lg: 22px;
-$font-md: 18px;
 $font-sm: 14px;
+$font-md: 18px;
+$font-lg: 22px;
+$font-xxl: 32px;
 
 //Font-weight
 

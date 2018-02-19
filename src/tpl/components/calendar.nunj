@@ -1,0 +1,174 @@
+<div class="container">
+    <div class="calendar js-calendar">
+        <h2 class="h2 section__title">Your personal health support</h2>
+        <div class="wrapper__calendar">
+            <div class="calendar__header calendar__item">
+                <div class="header__info">
+                    <div class="info__logo">{{svg("icon-health-index")}}</div>
+                    <div class="info__time">
+                        <div class="time__remaining">Remaining time: <strong>24 days</strong></div>
+                        <span class="time__comment">You will be able to evaluate your plan once you finish it.</span>
+                        <div class="header__loading">
+                            <div class="header__loading--full"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__print d-none d-md-block">
+                    <button class="button button--success-invert print__btn"><div class="btn__icon print__icon">{{svg("icon-print")}}</div>Print your plan</button>
+                </div>
+            </div>
+            <div class="calendar__pagination calendar__item d-xl-none">
+                <div class="pagination__prev pagination__wrap">
+                    <div class="pagination__arrow pagination__arrow--left">{{svg("icon-arrow")}}</div>
+                    <a href="" class="link">Previous <span class="d-none d-md-inline">week</span></a>
+                </div>
+                <span class="pagination__current">Week 2</span>
+                <div class="pagination__next pagination__wrap">
+                    <a href="#" class="link">Next <span class="d-none d-md-inline">week</span></a>
+                    <div class="pagination__arrow pagination__arrow--right">{{svg("icon-arrow")}}</div>
+                </div>
+            </div>
+            {# Week one #}
+            <div class="calendar__days calendar__item js-days">
+                <span class="calendar__week d-none d-xl-inline-block">Week 1</span>
+                {% set days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] %}
+                {% for day in days %}
+                    <div class="days__day js-{{day}}">
+                        <span class="day__name">{{day}}</span>
+                        <div data-day-box="first{{day}}" class="day__box js-box"><div data-day-icon="first{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">{{svg('icon-tick')}}</div><div data-day-icon="first{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">{{svg('icon-cross')}}</div></div>  
+                        <button data-day-btn="first{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <span data-day-text="first{{day}}" data-day-text-active="Unmark" data-day-text-inactive="Remark" class="d-xl-none js-text-btn">Mark</span>
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+            {# Week two #}
+            <div class="calendar__days d-none d-xl-flex calendar__item js-days">
+                <span class="calendar__week d-none d-xl-inline-block">Week 2</span>
+                {% set days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] %}
+                {% for day in days %}
+                    <div class="days__day js-{{day}}">
+                        <div data-day-box="second{{day}}" class="day__box js-box">
+                            <div data-day-icon="second{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">
+                                {{svg('icon-tick')}}
+                            </div>
+                            <div data-day-icon="second{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">
+                                {{svg('icon-cross')}}
+                            </div>
+                        </div>  
+                        <button data-day-btn="second{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+            {# Week three #}
+            <div class="calendar__days d-none d-xl-flex calendar__item js-days">
+                <span class="calendar__week d-none d-xl-inline-block">Week 3</span>
+                {% set days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] %}
+                {% for day in days %}
+                    <div class="days__day js-{{day}}">
+                        <div data-day-box="third{{day}}" class="day__box js-box">
+                            <div data-day-icon="third{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">
+                                {{svg('icon-tick')}}
+                            </div>
+                            <div data-day-icon="third{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">
+                                {{svg('icon-cross')}}
+                            </div>
+                        </div>  
+                        <button data-day-btn="third{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+            {# Week four #}
+            <div class="calendar__days d-none d-xl-flex calendar__item js-days">
+                <span class="calendar__week d-none d-xl-inline-block">Week 4</span>
+                {% set days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] %}
+                {% for day in days %}
+                    <div class="days__day js-{{day}}">
+                        <div data-day-box="fourth{{day}}" class="day__box js-box">
+                            <div data-day-icon="fourth{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">
+                                {{svg('icon-tick')}}
+                            </div>
+                            <div data-day-icon="fourth{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">
+                                {{svg('icon-cross')}}
+                            </div>
+                        </div>  
+                        <button data-day-btn="fourth{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+            {# Week five #}
+            <div class="calendar__days d-none d-xl-flex calendar__item js-days">
+                <span class="calendar__week d-none d-xl-inline-block">Week 5</span>
+                {% set days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] %}
+                {% for day in days %}
+                    <div class="days__day js-{{day}}">
+                        <div data-day-box="fifth{{day}}" class="day__box js-box">
+                            <div data-day-icon="fifth{{day}}" class="box__icon box__icon--tick d-none js-icon-box js-tick">
+                                {{svg('icon-tick')}}
+                            </div>
+                            <div data-day-icon="fifth{{day}}" class="box__icon box__icon--cross d-none js-icon-box js-cross">
+                                {{svg('icon-cross')}}
+                            </div>
+                        </div>  
+                        <button data-day-btn="fifth{{day}}" class="button button--success-invert day__toggle js-toggler">
+                            <div class="toggle__icon d-none d-xl-block">
+                                {{svg("icon-arrows-circle")}}
+                            </div>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="calendar__actions calendar__item">
+                <div class="actions__action">
+                    <div class="action__label">Set reminders <button class="button label__help">{{svg('icon-questionmark', 'help__img')}}</button></div>
+                    <form class="action__form action__reminder">
+                        <div class="form-group action__group">
+                            <select data-action-name="reminder" class="form-control js-reminder">
+                                <option value="3">Every 3 days</option>
+                                <option value="7">Every 7 days</option>
+                                <option value="14">Every 14 days</option>
+                            </select>
+                        </div>
+                        <button data-action-btn="reminder" data-action-method="post" type="button" class="button button--success-invert action__submit js-submit js-reminder-submit">Set</button>
+                    </form>
+                </div>
+                <div class="actions__action">
+                    <div class="action__label">Prefered time to receive email</div>
+                    <form class="action__form action__mail">
+                        <div class="form-group action__group">
+                            <select data-action-name="mailTime" class="form-control js-mail-time">
+                                <option value="9">9:00</option>
+                                <option value="10">10:00</option>
+                                <option value="11">11:00</option>
+                                <option value="12">12:00</option>
+                                <option value="13">13:00</option>
+                            </select>
+                        </div>
+                        <button data-action-btn="mailTime" type="button" data-action-method="post" class="button button--success-invert action__submit js-submit js-mail-time-submit">Set</button>
+                    </form>
+                </div>
+                <div class="actions__action">
+                    <div class="action__label">You missed more task?<button class="button label__help">{{svg('icon-questionmark', 'help__img')}}</button></div>
+                    <form data-action-name="reset" class="action__form action__reset">
+                        <button type="button" data-action-btn="reset" data-action-method="post" class="button button--success-invert action__submit reset__submit js-submit js-reset-submit">Reset my plan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
