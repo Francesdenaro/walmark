@@ -6,10 +6,10 @@ export default function (container) {
     const activeClass = 'active';
     const boxes = [...container.querySelectorAll('.js-box')];
     const boxIcons = [...container.querySelectorAll('.js-icon-box')];
+    const buttonTextArray = [...container.querySelectorAll('.js-text-btn')];
     const crossClass = 'js-cross';
     const hiddenClass = 'd-none';
     const inactiveClass = 'inactive';
-    const buttonTextArray = [...container.querySelectorAll('.js-text-btn')];
     const mailTimeBtn = container.querySelector('.js-mail-time-submit');
     const mailTime = container.querySelector('.js-mail-time');
     const reminder = container.querySelector('.js-reminder');
@@ -20,11 +20,10 @@ export default function (container) {
     const toggleTexts = [...container.querySelectorAll('.js-toggler-text')];
 
     toggleBoxes.forEach((toggler) => {
-        const box = boxes.find(box => box.dataset.dayBox === toggler.dataset.dayBtn);
-        const requestMethod = 'post';
+        const currentDayBox = boxes.find(box => box.dataset.dayBox === toggler.dataset.dayBtn);
         toggler.addEventListener('click', () => {
-            boxToggle(box);
-            makeRequest(requestMethod, box.dataset.dayBox, box.classList.contains(activeClass));
+            boxToggle(currentDayBox);
+            makeRequest('post', { [currentDayBox.dataset.dayBox]: currentDayBox.classList.contains(activeClass) });
         });
     });
 
@@ -35,9 +34,9 @@ export default function (container) {
 
         button.addEventListener('click', () => {
             if (relatedActionName === 'reset') {
-                makeRequest(requestMethod, relatedActionName, true);
+                makeRequest(requestMethod, { [relatedActionName]: true });
             } else {
-                makeRequest(requestMethod, relatedActionName, relatedAction.value);
+                makeRequest(requestMethod, { [relatedActionName]: relatedAction.value });
             }
         });
     });
@@ -46,8 +45,8 @@ export default function (container) {
         const boxClassList = box.classList;
         const dayBox = box.dataset.dayBox;
         const buttonText = buttonTextArray.find(text => text.dataset.dayText === dayBox);
-        const innerTick = boxIcons.find(icon => icon.dataset.dayIcon === dayBox && icon.classList.contains(tickClass));
         const innerCross = boxIcons.find(icon => icon.dataset.dayIcon === dayBox && icon.classList.contains(crossClass));
+        const innerTick = boxIcons.find(icon => icon.dataset.dayIcon === dayBox && icon.classList.contains(tickClass));
 
         if (!boxClassList.contains(activeClass) && !boxClassList.contains(inactiveClass)) {
             boxClassList.toggle(activeClass);
@@ -67,10 +66,12 @@ export default function (container) {
         }
     }
 
-    function makeRequest(method, valueName, value) {
+    function makeRequest(method, data, url = '') {
         try {
-            axios[method]('', {
-                [valueName]: value
+            axios({
+                method,
+                url,
+                data
             })
                 .then((response) => {
                     console.log(response);
