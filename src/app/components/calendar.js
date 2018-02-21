@@ -61,7 +61,7 @@ export default function (container) {
             if (buttonText) {
                 boxClassList.contains(activeClass) ?
                     buttonText.innerHTML = buttonText.dataset.dayTextActive :
-                    buttonText.innerHTML = buttonText.dataset.dayTextInactiveClass;
+                    buttonText.innerHTML = buttonText.dataset.dayTextInactive;
             }
         }
     }
