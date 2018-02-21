@@ -3,5 +3,4 @@
 {% set title = "Walmark" %}
 
 {% block content %}
-
 {% endblock %}

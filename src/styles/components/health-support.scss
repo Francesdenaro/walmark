@@ -1,0 +1,140 @@
+.health-support {
+    $align-product-sm: 40px;
+    $icon-tick-size-xs: 70px;
+    $icon-tick-size-sm: 40px;
+    $pack-img-sm-width: 200px;
+    $pack-img-sm-height: 230px;
+    margin-bottom: $space-big;
+
+    &__wrapper {
+        @include flex (space-between, flex-start);
+        flex-direction: column;
+
+        .wrapper {
+            &__intro {
+                @include flex (space-between, flex-start);
+                flex-direction: column;
+                margin-bottom: $space-xxl;
+
+                @include media-breakpoint-up (sm) {
+                    flex-direction: row;
+                }
+
+                .intro {
+                    &__description .description__text {
+                        font-family: $lato;
+
+                        @include media-breakpoint-up (sm) {
+                            padding: $space-xl $space-big 0 0;
+                        }
+                    }
+
+                    &__pack .pack__img {
+                        @include media-breakpoint-up (sm) {
+                            width: $pack-img-sm-width;
+                            height: $pack-img-sm-height;
+                        }
+                    }
+                }
+            }
+
+            &__products .products {
+                &__title {
+                    margin-bottom: $space-xl;
+                }
+
+                &__boxes {
+                    @include flex(flex-start, stretch);
+                    flex-direction: column;
+
+                    .boxes__box {
+                        @include flex (flex-start, flex-start);
+                        flex-direction: column;
+                        border: $smooth-border solid $border-light;
+                        padding: $space-lg;
+                        padding-right: 0;
+
+                        &:not(:last-child) {
+                            margin-bottom: $space-xl;
+                        }
+
+                        .box {
+                            &__description {
+                                @include flex (flex-start, center);
+
+                                .description__icon {
+                                    @include size ($icon-tick-size-xs);
+                                    margin: 0 $space-xl 0 0;
+                                    fill: green;
+
+                                    @include media-breakpoint-up (sm) {
+                                        @include size ($icon-tick-size-sm);
+                                    }
+                                }
+                            }
+
+                            &__product {
+                                @include flex (flex-start, flex-start);
+                                padding-top: $space-xl;
+
+                                @include media-breakpoint-up (sm) {
+                                    padding-left: $align-product-sm;
+                                }
+                                .product {
+                                    &__details {
+                                        @include flex (flex-start, flex-start);
+                                        flex-direction: column;
+                                        padding-left: $space-md;
+
+                                        .details {
+                                            &__review {
+                                                @include flex (flex-start, center);
+
+                                                .review { 
+                                                    &__star {
+                                                        @include size (15px);
+                                                        display: inline-block;
+                                                        fill: $secondary-light;
+
+                                                        &.active {
+                                                            fill: $active-star;
+                                                        }
+                                                    }
+
+                                                    &__amount {
+                                                        padding-left: $space-sm;
+                                                        font-size: $font-xs;
+                                                        color: $secondary-medium;
+                                                    }
+                                                }
+                                            }
+
+                                            &__title {
+                                                margin: 0;
+                                                font-weight: $font-bolder;
+                                                color: $highlight-data;
+                                            }
+
+                                            &__subtitle {
+                                                font-size: $subtitle-size;
+                                                color: $subtitle;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &__comment {
+                                padding-top: $space-md;
+
+                                @include media-breakpoint-up (sm) {
+                                    padding-left: $align-product-sm;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
