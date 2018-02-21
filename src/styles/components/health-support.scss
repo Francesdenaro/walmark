@@ -67,6 +67,7 @@
                         @include flex (flex-start, space-between);
                         flex-direction: column;
                         border: $smooth-border solid $border-light;
+                        border-radius: $smooth-radius;
                         padding: $space-xl $space-md $space-xl $space-xl;
 
                         &:not(:last-child) {
