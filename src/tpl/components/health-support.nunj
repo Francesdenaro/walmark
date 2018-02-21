@@ -15,7 +15,10 @@
                 </div>
             </div>
             <div class="wrapper__products">
-                <h3 class="h3 highlight-title products__title">Products in the pack</h3>
+                <div class="products__titles">
+                    <h3 class="h3 highlight-title titles__title d-none d-md-inline-block">We cover your health</h3>
+                    <h3 class="h3 highlight-title titles__title">Products in the pack</h3>
+                </div>
                 <div class="products__boxes">
                     {% for i in range(0, 3) %}
                         <div class="boxes__box">
@@ -26,7 +29,7 @@
                                 </div>
                             </div>
                             <div class="box__product">
-                                <img class="product__img" src="http://satyr.io/75x75/gray" alt="">
+                                <img class="product__img" src="http://satyr.io/110x110/gray" alt="">
                                 <div class="product__details">
                                     <div class="details__review">
                                         <div class="review__stars">
@@ -36,11 +39,12 @@
                                         </div>
                                         <span class="review__amount">305 Reviews</span>
                                     </div>
-                                    <h4 class="h4 details__title">Benosen</h4>
+                                    <h4 class="h4 highlight-title details__title">Benosen</h4>
                                     <span class="details__subtitle">Food supplement</span>
+                                    <span class="details__comment d-none d-md-inline">Rychlé a účinné řešení pro celkovou očistu těla…</span>
                                 </div>
                             </div>
-                            <div class="box__comment">Rychlé a účinné řešení pro celkovou očistu těla…</div>
+                            <div class="box__comment d-md-none">Rychlé a účinné řešení pro celkovou očistu těla…</div>
                         </div>
                     {% endfor %}
                 </div>
