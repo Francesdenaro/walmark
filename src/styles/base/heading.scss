@@ -5,6 +5,16 @@
     text-align: center;
 }
 
+.h3 {
+    font-size: $size-h3;
+    font-weight: $font-bold;
+}
+
+.h4 {
+    font-size: $size-h4;
+    font-weight: $font-bold;
+}
+
 .section__title {
     position: relative;
     left: 50%;
@@ -15,12 +25,7 @@
     margin-bottom: $space-xxl;
 }
 
-.h3 {
-    font-size: $size-h3;
-    font-weight: $font-bold;
-}
-
-.h4 {
-    font-size: $size-h4;
-    font-weight: $font-bold;
+.highlight-title {
+    color: $highlight-data;
+    font-weight: $font-bolder;
 }

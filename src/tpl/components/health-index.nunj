@@ -66,7 +66,7 @@
                     <div class="level__emoticon icon__emoticon">{{svg("icon-emoticon")}}</div>
                 </div>
                 <div class="liquid__details details__comment">
-                    <div class="health__icon">{{svg("icon-drink")}}</div>
+                    <div class="health__icon">{{svg("icon-fluids")}}</div>
                     <div class="details__text">
                         <div class="text__value"><span class="text__value--big">2.5</span> Litres</div> 
                         <span class="text__comment">Is optimal fluid intake for your height and weight</span>

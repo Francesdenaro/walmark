@@ -12,6 +12,7 @@
     $box-size-lg: 660px;
     $box-size-circle: 100px;
     $small-toggler: 35px;
+    margin-bottom: $space-big;
 
     .wrapper__calendar {
         position: relative;
@@ -121,8 +122,7 @@
             }
 
             &__days {
-                @include flex (space-between, flex-start);
-                flex-direction: column;
+                @include flex (space-between, flex-start, column);
 
                 @include media-breakpoint-up (xl) {
                     flex-direction: row;
@@ -130,9 +130,8 @@
                 }
 
                 .days__day {
-                    @include flex (space-between, flex-start);
+                    @include flex (space-between, flex-start, column);
                     position: relative;
-                    flex-direction: column;
                     width: 100%;
 
                     @include media-breakpoint-down (lg) {
@@ -245,9 +244,8 @@
             }
 
             &__actions {
-                @include flex (space-between, stretch);
+                @include flex (space-between, stretch, column);
                 padding: $space-lg;
-                flex-direction: column;
 
                 @include media-breakpoint-up (md) {
                     flex-direction: row;

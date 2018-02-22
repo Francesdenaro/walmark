@@ -3,8 +3,7 @@
     $invite-btn-width:75px;
     margin: $space-xl 0;
 
-    @include flex (center, stretch);
-    flex-direction: column;
+    @include flex (center, stretch, column);
     font-weight: $font-light;
 
     @include media-breakpoint-up (md) {

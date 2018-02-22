@@ -16,10 +16,11 @@
  *
  * Styleguide Base - Utilities - Hidden element
  */
-@mixin flex ($justify, $align) {
+@mixin flex ($justify, $align, $direction: row) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
+    flex-direction: $direction;
 }
 
 @mixin size ($size) {
