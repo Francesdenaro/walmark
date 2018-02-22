@@ -10,8 +10,7 @@
         width: 100%;
 
         .header {
-            &__smooth {
-                .smooth {
+            &__smooth .smooth {
                     &__curve {
                         position: absolute;
                         right: 0;
@@ -31,7 +30,6 @@
                         }
                     }
                 }
-            }
 
             &__arrow {
                 position: absolute;
