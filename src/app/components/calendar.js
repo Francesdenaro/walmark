@@ -59,9 +59,9 @@ export default function (container) {
             innerCross.classList.toggle(hiddenClass);
 
             if (buttonText) {
-                boxClassList.contains(activeClass) ?
-                    buttonText.innerHTML = buttonText.dataset.dayTextActive :
-                    buttonText.innerHTML = buttonText.dataset.dayTextInactive;
+                buttonText.innerHTML = boxClassList.contains(activeClass) ?
+                    buttonText.dataset.dayTextActive :
+                    buttonText.dataset.dayTextInactive;
             }
         }
     }

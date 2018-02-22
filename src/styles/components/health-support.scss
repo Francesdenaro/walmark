@@ -8,8 +8,7 @@
     margin-bottom: $space-big;
 
     &__wrapper {
-        @include flex (space-between, flex-start);
-        flex-direction: column;
+        @include flex (space-between, flex-start, column);
 
         @include media-breakpoint-up (lg) {
             flex-direction: row;
@@ -17,8 +16,7 @@
 
         .wrapper {
             &__intro {
-                @include flex (space-between, flex-start);
-                flex-direction: column;
+                @include flex (space-between, flex-start, column);
                 margin-bottom: $space-xxl;
 
                 @include media-breakpoint-between (sm,md) {
@@ -32,21 +30,21 @@
                         @include media-breakpoint-up (sm) {
                             padding: $space-xl $space-big 0 0;
                         }
-
-                
                     }
 
-                    &__pack .pack__img {
-                        @include media-breakpoint-between (sm,md) {
-                            width: $pack-img-sm-width;
-                            height: $pack-img-sm-height;
+                    &__pack .pack {
+                        &__img {
+                            @include media-breakpoint-between (sm,md) {
+                                width: $pack-img-sm-width;
+                                height: $pack-img-sm-height;
+                            }
                         }
                     }
                 }
             }
 
             &__products .products {
-                &__titles { 
+                &__titles {
                     @include flex (flex-start, center);
 
                     .titles__title {
@@ -60,12 +58,10 @@
                 }
 
                 &__boxes {
-                    @include flex(flex-start, stretch);
-                    flex-direction: column;
+                    @include flex(flex-start, stretch, column);
 
                     .boxes__box {
-                        @include flex (flex-start, space-between);
-                        flex-direction: column;
+                        @include flex (flex-start, space-between, column);
                         border: $smooth-border solid $border-light;
                         border-radius: $smooth-radius;
                         padding: $space-xl $space-md $space-xl $space-xl;
@@ -81,10 +77,11 @@
                         .box {
                             &__description {
                                 @include flex (flex-start, center);
+
                                 @include media-breakpoint-up (md) {
                                     width: 60%;
                                 }
-        
+
                                 .description__icon {
                                     @include size ($icon-tick-size-xs);
                                     margin-right: $space-xl;
@@ -103,26 +100,27 @@
                                 @include media-breakpoint-up (sm) {
                                     padding-left: $align-product-sm;
                                 }
+
                                 @include media-breakpoint-up (md) {
                                     padding: 0 0 0 $space-lg;
                                 }
+
                                 .product {
                                     &__img {
                                         @include media-breakpoint-down (sm) {
                                             @include size ($product-img-size-sm);
                                         }
                                     }
-                    
+
                                     &__details {
-                                        @include flex (flex-start, flex-start);
-                                        flex-direction: column;
+                                        @include flex (flex-start, flex-start, column);
                                         padding-left: $space-xl;
 
                                         .details {
                                             &__review {
                                                 @include flex (flex-start, center);
 
-                                                .review { 
+                                                .review {
                                                     &__star {
                                                         @include size (15px);
                                                         display: inline-block;
