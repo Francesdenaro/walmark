@@ -3,8 +3,8 @@
     margin-bottom: $space-big;
 
     &__container {
-        @include flex (center, stretch);
-        flex-flow: column nowrap;
+        @include flex (center, stretch, column);
+        flex-wrap: nowrap;
 
         @include media-breakpoint-up (md) {
             flex-direction: row;

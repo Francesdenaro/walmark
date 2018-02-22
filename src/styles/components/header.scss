@@ -163,8 +163,7 @@ $btn-navbar-width: 150px;
 
             .menu {
                 &__bars {
-                    @include flex (space-between, flex-end);
-                    flex-direction: column;
+                    @include flex (space-between, flex-end, column);
                     align-content: flex-end;
                     height: $menu-height;
                     width: $icon-height-lg;
