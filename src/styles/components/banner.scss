@@ -11,25 +11,25 @@
 
         .header {
             &__smooth .smooth {
-                    &__curve {
-                        position: absolute;
-                        right: 0;
-                        left: 0;
-                        width: 100vw;
-                        height: $smooth-angle-height;
+                &__curve {
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: $smooth-angle-height;
 
-                        &--top {
-                            top: 0;
-                            transform: translateY(-50%);
-                            fill: white;
-                        }
+                    &--top {
+                        top: 0;
+                        transform: translateY(-50%);
+                        fill: white;
+                    }
 
-                        &--bottom {
-                            bottom: 0;
-                            fill: $light-box-bg;
-                        }
+                    &--bottom {
+                        bottom: 0;
+                        fill: $light-box-bg;
                     }
                 }
+            }
 
             &__arrow {
                 position: absolute;
