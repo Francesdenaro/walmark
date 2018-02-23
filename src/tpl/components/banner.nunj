@@ -1,0 +1,12 @@
+<div class="banner">
+    <div class="banner__header">
+        <div class="header__smooth">{{svg('panel-curve', 'smooth__curve smooth__curve--top')}}</div>
+        <div class="header__smooth">{{svg('panel-curve-invert', 'smooth__curve smooth__curve--bottom')}}</div>
+        <div class="header__arrow">{{svg('icon-roundangle', 'arrow-icon')}}</div>
+        <img src="http://satyr.io/1440x180/brown" class="header__img">
+        <h2 class="h2 header__text">What the option for the program length</h2>
+    </div>
+    <div class="banner__text">
+        <div class="container">Walmark offers 2 types of programs, choose the right one for you. Lorem ipsum Walmark offers 2 types of programs, choose the right one for you.</div> 
+    </div>
+</div>

@@ -11,7 +11,7 @@
                     </div>
                 <div class="wrapper__avatar d-xl-none tools__wrapper">
                     <button class="button header__btn">
-                        <img class="avatar__img icon" src="http://satyr.io/200x300/orange?delay=3g" alt="avatar">
+                        <img class="avatar__img icon" src="http://satyr.io/200x300/orange" alt="avatar">
                     </button>                    
                 </div>
                 <div class="wrapper__username tools__wrapper d-none d-md-inline-block">

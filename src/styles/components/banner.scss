@@ -1,0 +1,70 @@
+.banner {
+    $smooth-angle-height: 5px;
+    $arrow-height: 60px;
+    $arrow-width: 35px;
+    $banner-img-height: 180px;
+    margin-bottom: $space-big;
+
+    &__header {
+        position: relative;
+        width: 100%;
+
+        .header {
+            &__smooth .smooth {
+                &__curve {
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: $smooth-angle-height;
+
+                    &--top {
+                        top: 0;
+                        transform: translateY(-50%);
+                        fill: white;
+                    }
+
+                    &--bottom {
+                        bottom: 0;
+                        fill: $light-box-bg;
+                    }
+                }
+            }
+
+            &__arrow {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                height: $arrow-height;
+                width: $arrow-width;
+                transform: translate(-50%, 25%) rotate(90deg);
+                fill: $light-box-bg;
+            }
+
+            &__text {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                color: white;
+
+                @include media-breakpoint-up (sm) {
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &__img {
+                width: 100vw;
+                height: $banner-img-height;
+            }
+        }
+    }
+
+    &__text {
+        padding: $space-xxl $space-xl $space-xl;
+        font-size: $font-banner;
+        font-weight: $font-light;
+        background: $light-box-bg;
+    }
+}

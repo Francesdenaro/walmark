@@ -7,7 +7,7 @@
     margin-bottom: $space-big;
 
     &__row {
-        @include flex (center, stretch column);
+        @include flex (center, stretch, column);
 
         @include media-breakpoint-up (md) {
             flex-direction: row;
