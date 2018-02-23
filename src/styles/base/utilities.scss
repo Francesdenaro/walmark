@@ -28,6 +28,13 @@
     height: $size;
 }
 
+@mixin triangle-size ($width, $height: inherit) {
+    border-top-width: $height;
+    border-left-width: $width;
+    border-right-width: $width;
+    border-right-bottom: $height;
+}
+
 .u-hidden {
     display: none;
 }

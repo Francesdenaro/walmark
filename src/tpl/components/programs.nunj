@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="programs">
+        {% for i in range (0, 2) %}
+        <div class="programs__box">
+            <h4 class="h4 highlight-title box__title">Program for {% if loop.index == 1 %}1 month{% else %}3 months{% endif %} </h4>
+            <ul class="box__list">
+                {% if loop.index == 1 %}
+                    <li>Výhodnější cena než při nákupu jednotlivých produktů</li>
+                {% else %}
+                    <li class="d-sm-none">Better prices and free shipping</li>
+                    <li class="list__item">3 měsíc zdarma</li>
+                    <li class="d-sm-none">Track and compare your health improvement </li>
+                    <li class="list__item">Doprava zdarma</li>
+                    <li class="d-sm-none">Access to special offers on partner e-shop Health club</li>
+                    <li class="list__item">Výraznější efekt</li>
+                {% endif %}
+            </ul>
+            <div class="box__shop">
+                <div class="shop__interaction">
+                    <span>Show total price on partner eshop</span>
+                    <button class="button interaction__button">Add to shopping list</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
