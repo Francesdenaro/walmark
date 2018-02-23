@@ -1,7 +1,8 @@
 <div class="container">
     <div class="programs">
+    <div class="programs__boxes">
         {% for i in range (0, 2) %}
-        <div class="programs__box">
+        <div class="boxes__box">
             <h4 class="h4 highlight-title box__title">Program for {% if loop.index == 1 %}1 month{% else %}3 months{% endif %} </h4>
             <ul class="box__list">
                 {% if loop.index == 1 %}
@@ -23,5 +24,9 @@
             </div>
         </div>
         {% endfor %}
+    </div>
+        <div class=" d-none d-lg-block programs__warning">
+            <strong>Attention:</strong> Due to the limited number of input information is only a recommendation, which in any case does not replace consultation with a doctor and treatment recommended by a doctor on the basis of a full health assessment. Health index is the basis for a diagnosis in order to determine appropriate treatment.
+        </div>
     </div>
 </div>

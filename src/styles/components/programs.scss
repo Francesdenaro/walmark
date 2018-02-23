@@ -3,103 +3,115 @@
     $arrow-md: 155px;
     $arrow-lg: 225px;
     $arrow-xl: 270px;
+    $warning-font-size: 12px;
+    margin-bottom: $space-big;
 
-    @include flex (space-between, stretch, column);
-    margin: $space-extra 0 $space-big;
-    
-    @include media-breakpoint-up (md) {
-        flex-direction: row;
-    }
-    
-    &__box {
+    &__boxes {
         @include flex (space-between, stretch, column);
-        position: relative;
-        padding: $space-xl;
-        background: $light-box-bg;
-
-        &:not(:last-child) {
-            margin-bottom: $space-extra;
-        }
-        
-        @include media-breakpoint-up (md) {
-            &:not(:last-child) {
-                margin: 0 $space-xxl 0 0
-            }
-        }
+        margin: $space-extra 0 $space-big;
 
         @include media-breakpoint-up (md) {
-            width: calc(50% - #{$space-lg});
+            flex-direction: row;
         }
 
-        &::before {
-            @include size (0);
-            position: absolute;
-            top: 0;
-            left: 50%;
-            border-left: 145px solid transparent;
-            border-right: 145px solid transparent;
-            border-bottom: 50px solid $light-box-bg;
-            transform: translate(-50%, -100%);
-            content: '';
+        .boxes {
+            &__box {
+                @include flex (space-between, stretch, column);
+                position: relative;
+                padding: $space-xl;
+                background: $light-box-bg;
 
-            @include media-breakpoint-up (sm) {
-                @include triangle-size ($arrow-sm);
-            }
-            
-            @include media-breakpoint-up (md) {
-                @include triangle-size ($arrow-md);
-            }
-            
-            @include media-breakpoint-up (lg) {
-                @include triangle-size ($arrow-lg);
-            }
-
-            @include media-breakpoint-up (xl) {
-                @include triangle-size ($arrow-xl);
-            }
-        }
-
-        .box {
-            &__title {
-                @include media-breakpoint-up (sm) {
-                    padding-left: $space-xl;
+                &:not(:last-child) {
+                    margin-bottom: $space-extra;
                 }
-            }
 
-            &__list {
-                padding: $space-sm 0 0 $space-xl;
-
-                .list__item {
-                    @include media-breakpoint-down (xs) {
-                        display: none;
+                @include media-breakpoint-up (md) {
+                    &:not(:last-child) {
+                        margin: 0 $space-xxl 0 0;
                     }
                 }
-            }
-            &__shop {
-                @include media-breakpoint-up (sm) {
-                    padding: $space-lg;
+
+                @include media-breakpoint-up (md) {
+                    width: calc(50% - #{$space-lg});
                 }
-                
-                .shop__interaction {
-                    @include flex (center, center, column);
-                    padding: $space-xl $space-sm;
-                    color: $primary;
-                    background: white;
-                    text-align: center;
-    
+
+                &::before {
+                    @include size (0);
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    border-left: 145px solid transparent;
+                    border-right: 145px solid transparent;
+                    border-bottom: 50px solid $light-box-bg;
+                    transform: translate(-50%, -100%);
+                    content: '';
+
                     @include media-breakpoint-up (sm) {
-                        align-items: stretch;
-                        padding: $space-xl $space-lg;
+                        @include triangle-size ($arrow-sm);
                     }
-    
-                    .interaction__button {
-                        margin: $space-xl 0 0;
-                        padding: $space-md $space-xxl;
-                        background: $primary;
-                        color: white;
+
+                    @include media-breakpoint-up (md) {
+                        @include triangle-size ($arrow-md);
+                    }
+
+                    @include media-breakpoint-up (lg) {
+                        @include triangle-size ($arrow-lg);
+                    }
+
+                    @include media-breakpoint-up (xl) {
+                        @include triangle-size ($arrow-xl);
+                    }
+                }
+
+                .box {
+                    &__title {
+                        @include media-breakpoint-up (sm) {
+                            padding-left: $space-xl;
+                        }
+                    }
+
+                    &__list {
+                        padding: $space-sm 0 0 $space-xl;
+
+                        .list__item {
+                            @include media-breakpoint-down (xs) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &__shop {
+                        @include media-breakpoint-up (sm) {
+                            padding: $space-lg;
+                        }
+
+                        .shop__interaction {
+                            @include flex (center, center, column);
+                            padding: $space-xl $space-sm;
+                            color: $primary;
+                            background: white;
+                            text-align: center;
+
+                            @include media-breakpoint-up (sm) {
+                                align-items: stretch;
+                                padding: $space-xl $space-lg;
+                            }
+
+                            .interaction__button {
+                                margin: $space-xl 0 0;
+                                padding: $space-md $space-xxl;
+                                background: $primary;
+                                color: white;
+                            }
+                        }
                     }
                 }
             }
         }
+    }
+
+    &__warning {
+        font-size: $secondary-font-size;
+        color: $secondary-text;
     }
 }
