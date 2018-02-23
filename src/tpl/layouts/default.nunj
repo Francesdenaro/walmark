@@ -49,6 +49,7 @@
         {% include 'components/calendar.nunj' %}
         {% include 'components/health-support.nunj' %}
         {% include 'components/banner.nunj' %}
+        {% include 'components/programs.nunj' %}
     </main>
 
     {# Scripts #}
