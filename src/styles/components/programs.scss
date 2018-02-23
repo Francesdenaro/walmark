@@ -1,4 +1,6 @@
 .programs {
+    $arrow-height: 50px;
+    $arrow-xs: 145px;
     $arrow-sm: 255px;
     $arrow-md: 155px;
     $arrow-lg: 225px;
@@ -40,9 +42,9 @@
                     position: absolute;
                     top: 0;
                     left: 50%;
-                    border-left: 145px solid transparent;
-                    border-right: 145px solid transparent;
-                    border-bottom: 50px solid $light-box-bg;
+                    border-left: $arrow-xs solid transparent;
+                    border-right: $arrow-xs solid transparent;
+                    border-bottom: $arrow-height solid $light-box-bg;
                     transform: translate(-50%, -100%);
                     content: '';
 
