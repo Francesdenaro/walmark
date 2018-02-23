@@ -28,11 +28,8 @@
     height: $size;
 }
 
-@mixin triangle-size ($width, $height: inherit) {
-    border-top-width: $height;
-    border-left-width: $width;
-    border-right-width: $width;
-    border-right-bottom: $height;
+@mixin triangle-size ($width, $height) {
+    border-width: $height $width;
 }
 
 .u-hidden {

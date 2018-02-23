@@ -49,19 +49,19 @@
                     content: '';
 
                     @include media-breakpoint-up (sm) {
-                        @include triangle-size ($arrow-sm);
+                        @include triangle-size ($arrow-sm, $arrow-height);
                     }
 
                     @include media-breakpoint-up (md) {
-                        @include triangle-size ($arrow-md);
+                        @include triangle-size ($arrow-md, $arrow-height);
                     }
 
                     @include media-breakpoint-up (lg) {
-                        @include triangle-size ($arrow-lg);
+                        @include triangle-size ($arrow-lg, $arrow-height);
                     }
 
                     @include media-breakpoint-up (xl) {
-                        @include triangle-size ($arrow-xl);
+                        @include triangle-size ($arrow-xl, $arrow-height);
                     }
                 }
 
