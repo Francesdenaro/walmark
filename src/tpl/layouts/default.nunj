@@ -50,6 +50,7 @@
         {% include 'components/health-support.nunj' %}
         {% include 'components/banner.nunj' %}
         {% include 'components/programs.nunj' %}
+        {% include 'components/comparison.nunj' %}
     </main>
 
     {# Scripts #}

@@ -1,0 +1,139 @@
+.comparison {
+    $icon-box-size: 60px;
+    $smile-size: 25px;
+    $max-box-width: 450px;
+    margin-bottom: $space-big;
+
+    %standard-box {
+        padding: $space-xl;
+        border: $smooth-border solid $border-light;
+        border-radius: $smooth-radius;
+        
+        @include media-breakpoint-down (md) {
+            width: 100%;
+            max-width: $max-box-width;
+        }
+    }
+
+    &__title {
+        padding: 0 $space-bigger $space-md;
+        margin: 0;
+    }
+
+    &__subtitle {
+        font-weight: $font-light;
+        text-align: center;
+        padding: $space-xl 0;
+        margin: 0;
+
+        @include media-breakpoint-up (sm) {
+            padding: $space-xxl 0;
+        }
+    }
+
+    &__wrapper {
+
+        .wrapper {
+            &__help {
+                @include flex (space-between, center);
+                @extend %standard-box;
+                margin: 0 auto;
+
+                @include media-breakpoint-up (lg) {
+                    max-width: auto;
+                }
+
+                .help {
+                    &__message {
+                        padding-right: $space-xl;
+                    }
+
+                    &__icon {
+                        @include size ($smile-size);
+                        flex-shrink: 0;
+                        border-radius: 50%;
+                        fill: white;
+                        background: $highlight-data;
+                    }
+                }
+            }
+
+            &__boxes { 
+                @include flex (center, center, column);
+                margin-bottom: $space-lg;
+
+                @include media-breakpoint-up (lg) {
+                    flex-direction: row;
+                    align-items: stretch;
+                }
+
+                .boxes {
+                    &__box {
+                        @extend %standard-box;
+
+                        @include media-breakpoint-down (md) {
+                            &:not(:last-child) {
+                                margin-bottom: $space-lg;
+                            }
+                        }
+
+                        @include media-breakpoint-up (lg) {
+                            width: calc(100% / 3 - #{$space-big} );
+                        }
+
+                        .box {
+                            &__title {
+                                @include media-breakpoint-up (sm) {
+                                    text-align: center;
+                                }
+                            }
+
+                            &__data {
+                                @include flex (center, center);
+
+                                .data {
+                                    &__icon {
+                                        @include size ($icon-box-size);
+                                        margin: 0 $space-xxl;
+
+                                        &--chart {
+                                            padding: $space-xl $space-lg;
+                                            border-radius: 50%;
+                                            background: $secondary-light;
+                                        }
+                                    }
+
+                                    &__results {
+                                        @include flex (space-between, center, column);
+                                        padding: $space-xxl 0;
+
+                                        .results {
+                                            &__title {
+                                                color: $secondary-medium;
+                                                text-transform: uppercase;
+                                            }
+
+                                            &__value {
+                                                color: $primary;
+                                                font-size: $font-lg;
+                                                font-weight: $font-bolder;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &__comment {
+                                font-weight: $font-light;
+
+                                @include media-breakpoint-up (sm) {
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
