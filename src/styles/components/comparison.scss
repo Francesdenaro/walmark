@@ -8,7 +8,7 @@
         padding: $space-xl;
         border: $smooth-border solid $border-light;
         border-radius: $smooth-radius;
-        
+
         @include media-breakpoint-down (md) {
             width: 100%;
             max-width: $max-box-width;
@@ -32,10 +32,10 @@
     }
 
     &__wrapper {
-
         .wrapper {
             &__help {
                 @include flex (space-between, center);
+
                 @extend %standard-box;
                 margin: 0 auto;
 
@@ -58,7 +58,7 @@
                 }
             }
 
-            &__boxes { 
+            &__boxes {
                 @include flex (center, center, column);
                 margin-bottom: $space-lg;
 
@@ -78,7 +78,11 @@
                         }
 
                         @include media-breakpoint-up (lg) {
-                            width: calc(100% / 3 - #{$space-big} );
+                            width: calc((100% - #{$space-bigger}) / 3);
+
+                            &:not(:last-child) {
+                                margin-right: calc(#{$space-bigger} / 2);
+                            }
                         }
 
                         .box {
