@@ -8,6 +8,7 @@
     &__title {
         padding: 0 $space-extra $space-md;
     }
+
     &__tips-list .tips-list {
         &__tip {
             max-width: $tip-width;
@@ -46,7 +47,7 @@
                     @include flex (flex-start, center);
                     font-size: $font-sm;
                     font-weight: $font-light;
-                    
+
                     @include media-breakpoint-down (sm) {
                         padding-top: $space-lg;
                     }
