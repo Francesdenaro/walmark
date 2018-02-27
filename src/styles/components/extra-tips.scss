@@ -1,0 +1,66 @@
+.extra-tips {
+    $tip-width: 720px;
+    $tip-icon-size: 45px;
+    $tip-icon-size-big: 100px;
+    $padding-tip-title: 145px;
+    margin-bottom: $space-big;
+
+    &__title {
+        padding: 0 $space-extra $space-md;
+    }
+
+    &__tips-list .tips-list {
+        &__tip {
+            max-width: $tip-width;
+            margin: 0 auto;
+
+            &:not(:last-child) {
+                margin-bottom: $space-xl;
+            }
+
+            .tip {
+                &__icon {
+                    @include size ($tip-icon-size);
+                    flex-shrink: 0;
+
+                    @include media-breakpoint-up (md) {
+                        @include size ($tip-icon-size-big);
+                        position: relative;
+                        bottom: $space-xl;
+                    }
+                }
+
+                &__title {
+                    @include flex (flex-start, center);
+
+                    .title__text {
+                        margin: 0;
+                        padding-left: $space-lg;
+
+                        @include media-breakpoint-up (md) {
+                            padding-left: $padding-tip-title;
+                        }
+                    }
+                }
+
+                &__text {
+                    @include flex (flex-start, center);
+                    font-size: $font-sm;
+                    font-weight: $font-light;
+
+                    @include media-breakpoint-down (sm) {
+                        padding-top: $space-lg;
+                    }
+
+                    .text__inner-text {
+                        margin: 0;
+
+                        @include media-breakpoint-up (md) {
+                            padding-left: $space-big;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

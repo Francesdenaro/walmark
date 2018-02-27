@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="extra-tips">
+        <h2 class="h2 extra-tips__title section__title">Extra tips </h2>
+        <div class="extra-tips__tips-list">
+            {% set text = "Smile at people around you more; even at those who you meet randomly. You will soon see how rapidly your mood will improve. Start your day by smiling when you wake up. Whether sitting or lying in your bed, just smile for a couple of minutes. Doing this you activate facial muscles which send the proper stimulus to your brain and your spirit will lift straight away." %}
+            {% set tips = [
+                { title: "Diet", icon: "icon-nutrition"},
+                { title: "Sport", icon: "icon-physical-activity"},
+                { title: "Mental health", icon: "icon-emotional-balance"},
+                { title: "Illness", icon: "icon-environment-and-bad-habits"},
+                { title: "Mental Health", icon: "icon-emotional-balance"},
+                { title: "Illness", icon: "icon-nutrition"}
+                ] %}
+            {% for tip in tips %}
+                <div class="tips-list__tip">
+                    <div class="tip__title">
+                        <div class="title__icon tip__icon d-md-none">{{svg(tip.icon)}}</div>
+                        <h4 class="h4 highlight-title title__text">{{tip.title}}</h4>
+                    </div>
+                    <div class="tip__text">
+                        <div class="text__icon tip__icon d-none d-md-block">{{svg(tip.icon)}}</div>
+                        <p class="text__inner-text">{{text}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
