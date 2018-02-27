@@ -31,109 +31,105 @@
         }
     }
 
-    &__wrapper {
-        .wrapper {
-            &__help {
-                @include flex (space-between, center);
+    &__wrapper .wrapper {
+        &__help {
+            @include flex (space-between, center);
 
-                @extend %standard-box;
-                margin: 0 auto;
+            @extend %standard-box;
+            margin: 0 auto;
 
-                @include media-breakpoint-up (lg) {
-                    max-width: auto;
-                }
-
-                .help {
-                    &__message {
-                        padding-right: $space-xl;
-                    }
-
-                    &__icon {
-                        @include size ($smile-size);
-                        flex-shrink: 0;
-                        border-radius: 50%;
-                        fill: white;
-                        background: $highlight-data;
-                    }
-                }
+            @include media-breakpoint-up (lg) {
+                max-width: auto;
             }
 
-            &__boxes {
-                @include flex (center, center, column);
-                margin-bottom: $space-lg;
-
-                @include media-breakpoint-up (lg) {
-                    flex-direction: row;
-                    align-items: stretch;
+            .help {
+                &__message {
+                    padding-right: $space-xl;
                 }
 
-                .boxes {
-                    &__box {
-                        @extend %standard-box;
+                &__icon {
+                    @include size ($smile-size);
+                    flex-shrink: 0;
+                    border-radius: 50%;
+                    fill: white;
+                    background: $highlight-data;
+                }
+            }
+        }
 
-                        @include media-breakpoint-down (md) {
-                            &:not(:last-child) {
-                                margin-bottom: $space-lg;
-                            }
+        &__boxes {
+            @include flex (center, center, column);
+            margin-bottom: $space-lg;
+
+            @include media-breakpoint-up (lg) {
+                flex-direction: row;
+                align-items: stretch;
+            }
+
+            .boxes .boxes__box {
+                @extend %standard-box;
+
+                @include media-breakpoint-down (md) {
+                    &:not(:last-child) {
+                        margin-bottom: $space-lg;
+                    }
+                }
+
+                @include media-breakpoint-up (lg) {
+                    width: calc((100% - #{$space-bigger}) / 3);
+
+                    &:not(:last-child) {
+                        margin-right: calc(#{$space-bigger} / 2);
+                    }
+                }
+
+                .box {
+                    &__title {
+                        @include media-breakpoint-up (sm) {
+                            text-align: center;
                         }
+                    }
 
-                        @include media-breakpoint-up (lg) {
-                            width: calc((100% - #{$space-bigger}) / 3);
+                    &__data {
+                        @include flex (center, center);
 
-                            &:not(:last-child) {
-                                margin-right: calc(#{$space-bigger} / 2);
-                            }
-                        }
+                        .data {
+                            &__icon {
+                                @include size ($icon-box-size);
+                                margin: 0 $space-xxl;
 
-                        .box {
-                            &__title {
-                                @include media-breakpoint-up (sm) {
-                                    text-align: center;
+                                &--chart {
+                                    padding: $space-xl $space-lg;
+                                    border-radius: 50%;
+                                    background: $secondary-light;
                                 }
                             }
 
-                            &__data {
-                                @include flex (center, center);
+                            &__results {
+                                @include flex (space-between, center, column);
+                                padding: $space-xxl 0;
 
-                                .data {
-                                    &__icon {
-                                        @include size ($icon-box-size);
-                                        margin: 0 $space-xxl;
-
-                                        &--chart {
-                                            padding: $space-xl $space-lg;
-                                            border-radius: 50%;
-                                            background: $secondary-light;
-                                        }
+                                .results {
+                                    &__title {
+                                        color: $secondary-medium;
+                                        text-transform: uppercase;
                                     }
 
-                                    &__results {
-                                        @include flex (space-between, center, column);
-                                        padding: $space-xxl 0;
-
-                                        .results {
-                                            &__title {
-                                                color: $secondary-medium;
-                                                text-transform: uppercase;
-                                            }
-
-                                            &__value {
-                                                color: $primary;
-                                                font-size: $font-lg;
-                                                font-weight: $font-bolder;
-                                            }
-                                        }
+                                    &__value {
+                                        color: $primary;
+                                        font-size: $font-lg;
+                                        font-weight: $font-bolder;
                                     }
                                 }
                             }
+                        }
+                    }
 
-                            &__comment {
-                                font-weight: $font-light;
+                    &__comment {
+                        font-weight: $font-light;
 
-                                @include media-breakpoint-up (sm) {
-                                    text-align: center;
-                                }
-                            }
+                        @include media-breakpoint-up (sm) {
+                            text-align: center;
                         }
                     }
                 }
