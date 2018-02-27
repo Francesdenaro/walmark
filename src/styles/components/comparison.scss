@@ -66,7 +66,7 @@
                 align-items: stretch;
             }
 
-            .boxes .boxes__box {
+            .boxes__box {
                 @extend %standard-box;
 
                 @include media-breakpoint-down (md) {
