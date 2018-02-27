@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="comparison">
+        <h2 class="h2 section__title comparison__title">My comparison</h2>
+        <h4 class="h4 comparison__subtitle">See how you compare with others</h4>
+        <div class="comparison__wrapper">
+            <div class="wrapper__boxes">
+                {% for i in range(0,3) %}
+                    <div data-box-name={% if loop.index == 1 %}'healthIndex'{% elif loop.index == 2%}'bmi'{% else %}'survey'{% endif %} class="boxes__box">
+                        <h3 class="h3 highlight-title box__title">{% if loop.index == 1 %}Health Index{% elif loop.index == 2 %}BMI{% else %}What others answered{% endif %}</h3>
+                        <div class="box__data">
+                            <div class="data__results">
+                                <div class="results__title">{% if loop.index == 3 %}Yes{% else %}Average{% endif %}</div>
+                                <div class="results__value">53%</div>
+                            </div>
+                            {% if loop.index == 3 %}<div class="data__icon data__icon--percentage">{{svg('icon-percentage')}}</div>{% else %}<div class="data__icon data__icon--chart">{{svg('icon-chart')}}</div>{% endif %}
+                            <div class="data__results">
+                                <div class="results__title">{% if loop.index == 3 %}No{% else %}Yours{% endif %}</div>
+                                <div class="results__value">75%</div>
+                            </div>
+                        </div>
+                        <div class="box__comment">{% if loop.index == 3 %}Your answer: <strong>Yes</strong>{% else %}Your results are better than 75% of people{% endif %}</div>
+                    </div>
+                {% endfor %}
+            </div>
+                <div class="wrapper__help">
+                        <h3 class="h3 highlight-title help__message">Don't worry, we will help you get better!</h3>
+                        <div class="help__icon">{{svg('icon-emoticon')}}</div>
+                </div>
+        </div>
+    </div>
+</div>
