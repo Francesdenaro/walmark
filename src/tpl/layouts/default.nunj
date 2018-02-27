@@ -51,6 +51,8 @@
         {% include 'components/banner.nunj' %}
         {% include 'components/programs.nunj' %}
         {% include 'components/extra-tips.nunj' %}
+        {% include 'components/comparison.nunj' %}
+        {% include 'components/history.nunj' %}
     </main>
 
     {# Scripts #}

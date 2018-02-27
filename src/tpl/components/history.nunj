@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="history">
+        <h2 class="h2 section__title history__title">My health Index history</h2>
+        <div class="history__buttons">
+            <button class="button button--success-invert buttons__btn">November 24 2017</button>
+            <button class="button button--success-invert buttons__btn">May 15 2017</button>
+        </div>
+    </div>
+</div>
