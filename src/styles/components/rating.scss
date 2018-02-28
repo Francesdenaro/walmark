@@ -1,0 +1,78 @@
+.rating {
+    $text-box-height: 130px;
+    $star-size: 25px;
+    margin-bottom: $space-big;
+
+    &__title {
+        padding: 0 $space-xxl $space-md;
+    }
+
+    &__wrapper {
+        @include flex (space-between, center, column);
+        padding: $space-xl;
+        border: $smooth-border solid $border-light;
+        border-radius: $smooth-radius;
+        background: $light-box-bg;
+        font-weight: $font-light;
+
+        @include media-breakpoint-up (md) {
+            padding: $space-bigger $space-extra-big;
+        }
+
+        .wrapper {
+            &__text {
+                width: 100%;
+                height: $text-box-height;
+                padding: $space-md;
+                border-radius: $smooth-radius;
+            }
+
+            &__value {
+                @include flex (center, center, column);
+
+                @include media-breakpoint-up (md) {
+                    width: 100%;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    padding: $space-xxl 0 $space-sm;
+                }
+
+                .value {
+                    &__stars {
+                        @include flex (center, center);
+                        padding: $space-lg 0;
+
+                        .stars {
+                            &__star {
+                                @include size ($star-size);
+                                display: inline-block;
+                                fill: $secondary-light;
+                                margin-left: $space-sm;
+
+                                &.active {
+                                    fill: $active-star;
+                                }
+
+                                @include media-breakpoint-up (sm) {
+                                    margin-left: $space-md;
+                                }
+
+                                @include media-breakpoint-up (md) {
+                                    margin-left: $space-xl;
+                                }
+                            }
+                        }
+                    }
+
+                    &__button {
+                        padding: $space-md $space-xxl;
+
+                        @include media-breakpoint-down (sm) {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -52,6 +52,7 @@
         {% include 'components/programs.nunj' %}
         {% include 'components/extra-tips.nunj' %}
         {% include 'components/comparison.nunj' %}
+        {% include 'components/rating.nunj' %}
     </main>
 
     {# Scripts #}
