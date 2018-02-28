@@ -48,6 +48,7 @@
                                 display: inline-block;
                                 fill: $secondary-light;
                                 margin-left: $space-sm;
+                                transition: fill 1s;
 
                                 &.active {
                                     fill: $active-star;

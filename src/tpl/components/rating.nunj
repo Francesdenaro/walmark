@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="rating">
+    <div class="rating js-rating">
         <h2 class="h2 section__title rating__title">Rate the product</h2>
         <div class="rating__wrapper">
             <textarea class="wrapper__text" placeholder="Your review"></textarea>
@@ -7,7 +7,7 @@
                 <div class="value__stars">
                     <div class="stars__text">Your rating: </div>
                     {% for i in range(0,5) %}
-                        <div class="stars__star">{{svg('icon-star')}}</div>
+                        <div class="stars__star js-star">{{svg('icon-star')}}</div>
                     {% endfor %}    
                 </div>
                 <button class="button button--success value__button">Submit</button>
