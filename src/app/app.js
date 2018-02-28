@@ -14,6 +14,7 @@ import suffix from './components/suffix';
 import tabs from './components/tabs';
 import healthIndex from './components/healthIndex';
 import calendar from './components/calendar';
+import rating from './components/rating';
 import Timer from './components/Timer';
 import PlusOne from './components/plus-one/PlusOne';
 
@@ -23,6 +24,7 @@ const app = (config) => {
     factory(tabs, document.querySelectorAll('.js-tabs'));
     init(healthIndex, document.querySelector('.js-health-index'));
     init(calendar, document.querySelector('.js-calendar'));
+    factory(rating, document.querySelectorAll('.js-rating'));
 
     const store = configureStore(config);
     render(Timer, document.getElementById('timer'), { from: 100 });
